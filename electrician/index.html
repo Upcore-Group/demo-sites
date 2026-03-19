@@ -1,41 +1,103 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Élec Services</title>
-    <link rel="stylesheet" href="../common/style.css">
+  <meta charset="UTF-8">
+  <title>Élec Services – Électricien</title>
+  <link rel="stylesheet" href="../common/style.css">
+
+  <style>
+    .hero {
+      background: url(images/hero.jpg) center/cover no-repeat;
+      height: 220px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    .services {
+      margin-top: 15px;
+    }
+
+    .services li {
+      margin-bottom: 8px;
+    }
+  </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="card">
-            <h1>Élec Services</h1>
+  <div class="container">
+    <div class="card">
 
-            <p class="tagline">
-                Électricien certifié – Dépannage rapide
-            </p>
+      <!-- HERO IMAGE -->
+      <div class="hero"></div>
 
-            <div class="info">
-                <p>📍 Intervention Paris & Île-de-France</p>
-                <p>📞 06 12 34 56 78</p>
-                <p>⚡ Urgences 7j/7</p>
-            </div>
+      <h1>Élec Services</h1>
 
-            <a class="btn" href="tel:0612345678">
-                Urgence électrique
-            </a>
+      <p class="tagline">
+        Électricien certifié – Dépannage & installation
+      </p>
 
-            <!-- Return to main page -->
-            <div style="margin-top:15px;">
-                <a class="btn" href="../index.html">
-                    ⬅ Retour à l’accueil
-                </a>
-            </div>
+      <!-- INFO -->
+      <div class="info">
+        <p>📍 Paris & Île-de-France</p>
+        <p>📞 06 12 34 56 78</p>
+        <p>⚡ Urgences 7j/7</p>
+      </div>
 
-            <div class="footer">
-                Certifié Qualifelec
-            </div>
-        </div>
+      <!-- CTA -->
+      <a class="btn" href="tel:0612345678">
+        Appel d’urgence
+      </a>
+
+      <!-- DESCRIPTION -->
+      <p>
+        Élec Services intervient rapidement pour tous vos besoins en électricité :
+        dépannage, installation, rénovation et mise aux normes.
+        Nous garantissons un travail soigné, sécurisé et conforme aux standards actuels.
+      </p>
+
+      <!-- SERVICES -->
+      <div class="services">
+        <h3>Nos services</h3>
+        <ul>
+          <li>Dépannage électrique rapide</li>
+          <li>Installation de tableaux électriques</li>
+          <li>Mise aux normes</li>
+          <li>Éclairage intérieur / extérieur</li>
+          <li>Domotique et automatisation</li>
+        </ul>
+      </div>
+
+      <!-- GALLERY -->
+      <div class="gallery">
+        <img src="images/inst_electric.jfif" alt="Installation électrique">
+        <img src="images/depannage.png" alt="Dépannage électrique">
+        <img src="images/tableau.png" alt="Tableau électrique">
+      </div>
+
+      <!-- RETURN -->
+      <div style="margin-top:20px;">
+        <a class="btn" href="../index.html">
+          ⬅ Retour à l’accueil
+        </a>
+      </div>
+
+      <div class="footer">
+        Certifié Qualifelec – Intervention rapide et fiable
+      </div>
+
     </div>
+  </div>
 </body>
 </html>
