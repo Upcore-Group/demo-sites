@@ -84,6 +84,8 @@ body{
 
 /* ===== NAV ===== */
 
+/* ===== NAV ===== */
+
 .top-nav{
   position:absolute;
   top:25px;
@@ -109,6 +111,86 @@ body{
 
 .top-nav a:hover{
   background:rgba(255,255,255,0.22);
+}
+
+/* ===== MOBILE MENU BUTTON ===== */
+
+.menu-toggle{
+  display:none;
+  position:absolute;
+  top:20px;
+  right:20px;
+  z-index:30;
+  border:none;
+  background:rgba(255,255,255,0.15);
+  color:white;
+  font-size:28px;
+  width:52px;
+  height:52px;
+  border-radius:14px;
+  backdrop-filter:blur(5px);
+  cursor:pointer;
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:850px){
+
+  .hero{
+    min-height:420px;
+  }
+
+  .hero h1{
+    font-size:2.3rem;
+  }
+
+  .section{
+    padding:25px;
+  }
+
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  #slideshow{
+    height:300px;
+  }
+
+  /* MOBILE NAV */
+
+  .menu-toggle{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .top-nav{
+    position:absolute;
+    top:85px;
+    right:20px;
+    left:auto;
+    transform:none;
+
+    display:none;
+    flex-direction:column;
+    gap:10px;
+
+    background:rgba(0,0,0,0.75);
+    padding:15px;
+    border-radius:18px;
+    backdrop-filter:blur(8px);
+  }
+
+  .top-nav.show{
+    display:flex;
+  }
+
+  .top-nav a{
+    width:180px;
+    text-align:center;
+    background:rgba(255,255,255,0.12);
+  }
+
 }
 
 /* ===== BUTTONS ===== */
@@ -396,13 +478,18 @@ footer{
 <!-- HERO -->
 <section class="hero">
 
-  <!-- NAV -->
-  <nav class="top-nav">
+  <!-- MOBILE MENU BUTTON -->
+  <button class="menu-toggle" id="menuToggle">
+    ☰
+  </button>
+
+<!-- NAV -->
+  <nav class="top-nav" id="topNav">
     <a href="#apropos">À propos</a>
     <a href="#produits">Produits</a>
     <a href="#horaires">Horaires</a>
     <a href="#contact">Contact</a>
-  </nav>
+   </nav>
 
   <div class="hero-content">
 
@@ -701,6 +788,19 @@ img.style.opacity = 1;
 console.error(
 'Error fetching images:',
 err));
+
+
+const menuToggle =
+document.getElementById('menuToggle');
+
+const topNav =
+document.getElementById('topNav');
+
+menuToggle.addEventListener('click', () => {
+
+  topNav.classList.toggle('show');
+
+});
 
 </script>
 
