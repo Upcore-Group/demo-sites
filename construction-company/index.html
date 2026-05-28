@@ -13,13 +13,9 @@
 
 /* ===== RESET ===== */
 
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box;}
 
-html{
-  scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth;}
 
 body{
   margin:0;
@@ -81,6 +77,54 @@ body{
   gap:15px;
   justify-content:center;
   flex-wrap:wrap;
+}
+
+/* ===== NAV ===== */
+
+.top-nav{
+  position:absolute;
+  top:25px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:10;
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.top-nav a{
+  color:white;
+  text-decoration:none;
+  padding:10px 18px;
+  border-radius:30px;
+  background:rgba(255,255,255,0.12);
+  backdrop-filter:blur(5px);
+  transition:0.3s;
+  font-weight:bold;
+}
+
+.top-nav a:hover{
+  background:rgba(255,255,255,0.22);
+}
+
+/* ===== MOBILE MENU BUTTON ===== */
+
+.menu-toggle{
+  display:none;
+  position:absolute;
+  top:20px;
+  right:20px;
+  z-index:30;
+  border:none;
+  background:rgba(255,255,255,0.15);
+  color:white;
+  font-size:28px;
+  width:52px;
+  height:52px;
+  border-radius:14px;
+  backdrop-filter:blur(5px);
+  cursor:pointer;
 }
 
 /* ===== BUTTONS ===== */
@@ -279,13 +323,8 @@ body{
   background:rgba(255,255,255,0.35);
 }
 
-.prev{
-  left:15px;
-}
-
-.next{
-  right:15px;
-}
+.prev{left:15px;}
+.next{right:15px;}
 
 /* ===== DOTS ===== */
 
@@ -363,20 +402,49 @@ body{
 
 @media(max-width:850px){
 
-  .hero{
-    min-height:420px;
+  .hero{min-height:420px;}
+
+  .hero h1{font-size:2.3rem;}
+
+  .card{padding:25px;}
+
+  .carousel-slide img{height:300px;}
+
+  .carousel-overlay{
+    font-size:1rem;
+    padding:20px;
   }
 
-  .hero h1{
-    font-size:2.4rem;
+  .menu-toggle{
+    display:flex;
+    align-items:center;
+    justify-content:center;
   }
 
-  .card{
-    padding:25px;
+  .top-nav{
+    display:none;
+    position:absolute;
+    top:85px;
+    right:20px;
+    left:auto;
+    transform:none;
+    flex-direction:column;
+    gap:10px;
+    background:rgba(0,0,0,0.85);
+    padding:15px;
+    border-radius:18px;
+    backdrop-filter:blur(8px);
+    z-index:25;
   }
 
-  .carousel-slide img{
-    height:320px;
+  .top-nav.show{
+    display:flex;
+  }
+
+  .top-nav a{
+    width:180px;
+    text-align:center;
+    padding:12px 16px;
   }
 
 }
@@ -389,271 +457,217 @@ body{
 <!-- HERO -->
 <section class="hero">
 
-  <div class="hero-content">
+<button class="menu-toggle" id="menuToggle">☰</button>
 
-    <h1>Bâtir & Co</h1>
+<nav class="top-nav" id="topNav">
+  <a href="#services">Services</a>
+  <a href="#carousel-section">Projets</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-    <p>
-      Ingénierie, construction et solutions industrielles sur mesure.
-      Nous accompagnons les entreprises dans leurs projets complexes
-      avec expertise, innovation et qualité.
-    </p>
+<div class="hero-content">
 
-    <div class="hero-buttons">
+<h1>Bâtir & Co</h1>
 
-      <a class="btn btn-primary"
-         href="mailto:info@demo-com.fr">
-        📩 Demander un devis
-      </a>
+<p>
+  Ingénierie, construction et solutions industrielles sur mesure.
+  Nous accompagnons les entreprises dans leurs projets complexes
+  avec expertise, innovation et qualité.
+</p>
 
-      <a class="btn btn-secondary"
-         href="#services">
-        Découvrir nos services
-      </a>
+<div class="hero-buttons">
 
-    </div>
+<a class="btn btn-primary" href="mailto:info@demo-com.fr">
+  📩 Demander un devis
+</a>
 
-  </div>
+<a class="btn btn-secondary" href="#services">
+  Découvrir nos services
+</a>
 
+</div>
+</div>
 </section>
 
 <!-- MAIN -->
 <div class="container">
 
-  <!-- INFO CARDS -->
-  <div class="info-grid">
+<!-- INFO CARDS -->
+<div class="info-grid">
 
-    <div class="info-card">
-      <div style="font-size:2rem;">🏗️</div>
-      <h3>Construction industrielle</h3>
-      <p>
-        Réalisation de structures et bâtiments industriels modernes.
-      </p>
-    </div>
+<div class="info-card">
+  <div style="font-size:2rem;">🏗️</div>
+  <h3>Construction industrielle</h3>
+  <p>Réalisation de structures et bâtiments industriels modernes.</p>
+</div>
 
-    <div class="info-card">
-      <div style="font-size:2rem;">⚙️</div>
-      <h3>Ingénierie avancée</h3>
-      <p>
-        Études techniques et solutions adaptées à chaque projet.
-      </p>
-    </div>
+<div class="info-card">
+  <div style="font-size:2rem;">⚙️</div>
+  <h3>Ingénierie avancée</h3>
+  <p>Études techniques et solutions adaptées à chaque projet.</p>
+</div>
 
-    <div class="info-card">
-      <div style="font-size:2rem;">🔧</div>
-      <h3>Maintenance & suivi</h3>
-      <p>
-        Accompagnement complet avant, pendant et après les travaux.
-      </p>
-    </div>
-
-  </div>
-
-  <!-- CARD -->
-  <div class="card">
-
-    <h2 class="section-title">
-      Des solutions industrielles fiables et modernes
-    </h2>
-
-    <p class="description">
-      Bâtir & Co intervient dans la conception, la construction et la maintenance
-      d’infrastructures industrielles pour les entreprises et collectivités.
-      <br><br>
-      Grâce à notre expertise technique et à une équipe qualifiée,
-      nous assurons des projets robustes, sécurisés et conformes
-      aux normes les plus exigeantes.
-    </p>
-
-    <!-- SERVICES -->
-    <div id="services" class="services-grid">
-
-      <div class="service-card">
-        <h4>Conception industrielle</h4>
-        <p>
-          Études techniques et modélisation de projets industriels complexes.
-        </p>
-      </div>
-
-      <div class="service-card">
-        <h4>Construction & génie civil</h4>
-        <p>
-          Réalisation de bâtiments industriels et infrastructures techniques.
-        </p>
-      </div>
-
-      <div class="service-card">
-        <h4>Maintenance technique</h4>
-        <p>
-          Suivi, entretien et optimisation des installations existantes.
-        </p>
-      </div>
-
-      <div class="service-card">
-        <h4>Gestion de projet</h4>
-        <p>
-          Coordination complète des travaux et accompagnement client.
-        </p>
-      </div>
-
-    </div>
-
-    <!-- INFO -->
-    <div class="info">
-
-      <p>📍 Siège : 12 route de Bitche, 12345 Haguenau Cedex</p>
-
-      <p>📞 03 11 22 40 55</p>
-
-      <p>📧 info@demo-com.fr</p>
-
-    </div>
-
-    <!-- CAROUSEL -->
-    <div class="carousel-wrapper">
-
-      <div class="carousel" id="carousel">
-
-        <div class="carousel-slide">
-          <img src="../construction-company/images/construction.jfif"
-               alt="Construction">
-          <div class="carousel-overlay">
-            Construction de structures industrielles
-          </div>
-        </div>
-
-        <div class="carousel-slide">
-          <img src="../construction-company/images/ingenieur.jfif"
-               alt="Ingénieur">
-          <div class="carousel-overlay">
-            Expertise technique et ingénierie
-          </div>
-        </div>
-
-        <div class="carousel-slide">
-          <img src="../construction-company/images/architect.jfif"
-               alt="Architecte">
-          <div class="carousel-overlay">
-            Planification et conception de projets
-          </div>
-        </div>
-
-      </div>
-
-      <!-- BUTTONS -->
-      <button class="carousel-btn prev" onclick="moveSlide(-1)">
-        ❮
-      </button>
-
-      <button class="carousel-btn next" onclick="moveSlide(1)">
-        ❯
-      </button>
-
-      <!-- DOTS -->
-      <div class="carousel-dots">
-
-        <span class="dot active" onclick="goToSlide(0)"></span>
-        <span class="dot" onclick="goToSlide(1)"></span>
-        <span class="dot" onclick="goToSlide(2)"></span>
-
-      </div>
-
-    </div>
-
-    <!-- CTA -->
-    <div class="cta">
-
-      <h2>
-        Un partenaire solide pour vos projets industriels
-      </h2>
-
-      <p>
-        Bâtir & Co vous accompagne avec des solutions fiables,
-        une expertise reconnue et un suivi professionnel
-        à chaque étape de votre projet.
-      </p>
-
-      <div style="margin-top:30px;">
-
-        <a class="btn btn-primary"
-           href="mailto:info@demo-com.fr">
-          📩 Contactez-nous
-        </a>
-
-      </div>
-
-    </div>
-
-    <!-- RETURN -->
-    <div class="return">
-
-      <a class="btn" href="../index.html">
-        ⬅ Retour à l’accueil
-      </a>
-
-    </div>
-
-    <!-- FOOTER -->
-    <div class="footer">
-      © 2026 – Bâtir & Co • Construction & ingénierie industrielle
-    </div>
-
-  </div>
+<div class="info-card">
+  <div style="font-size:2rem;">🔧</div>
+  <h3>Maintenance & suivi</h3>
+  <p>Accompagnement complet avant, pendant et après les travaux.</p>
+</div>
 
 </div>
 
-<!-- CAROUSEL SCRIPT -->
+<!-- CARD -->
+<div class="card">
+
+<h2 class="section-title">
+  Des solutions industrielles fiables et modernes
+</h2>
+
+<p class="description">
+  Bâtir & Co intervient dans la conception, la construction et la maintenance
+  d’infrastructures industrielles pour les entreprises et collectivités.
+  <br><br>
+  Grâce à notre expertise technique et à une équipe qualifiée,
+  nous assurons des projets robustes, sécurisés et conformes
+  aux normes les plus exigeantes.
+</p>
+
+<!-- SERVICES -->
+<div id="services" class="services-grid">
+
+<div class="service-card">
+  <h4>Conception industrielle</h4>
+  <p>Études techniques et modélisation de projets industriels complexes.</p>
+</div>
+
+<div class="service-card">
+  <h4>Construction & génie civil</h4>
+  <p>Réalisation de bâtiments industriels et infrastructures techniques.</p>
+</div>
+
+<div class="service-card">
+  <h4>Maintenance technique</h4>
+  <p>Suivi, entretien et optimisation des installations existantes.</p>
+</div>
+
+<div class="service-card">
+  <h4>Gestion de projet</h4>
+  <p>Coordination complète des travaux et accompagnement client.</p>
+</div>
+
+</div>
+
+<!-- INFO -->
+<div class="info" id="contact">
+
+<p>📍 Siège : 12 route de Bitche, 12345 Haguenau Cedex</p>
+<p>📞 03 11 22 40 55</p>
+<p>📧 info@demo-com.fr</p>
+
+</div>
+
+<!-- CAROUSEL -->
+<div class="carousel-wrapper" id="carousel-section">
+
+<div class="carousel" id="carousel">
+
+<div class="carousel-slide">
+  <img src="../construction-company/images/construction.jfif" alt="Construction">
+  <div class="carousel-overlay">Construction de structures industrielles</div>
+</div>
+
+<div class="carousel-slide">
+  <img src="../construction-company/images/ingenieur.jfif" alt="Ingénieur">
+  <div class="carousel-overlay">Expertise technique et ingénierie</div>
+</div>
+
+<div class="carousel-slide">
+  <img src="../construction-company/images/architect.jfif" alt="Architecte">
+  <div class="carousel-overlay">Planification et conception de projets</div>
+</div>
+
+</div>
+
+<button class="carousel-btn prev" onclick="moveSlide(-1)">❮</button>
+<button class="carousel-btn next" onclick="moveSlide(1)">❯</button>
+
+<div class="carousel-dots">
+  <span class="dot active" onclick="goToSlide(0)"></span>
+  <span class="dot" onclick="goToSlide(1)"></span>
+  <span class="dot" onclick="goToSlide(2)"></span>
+</div>
+
+</div>
+
+<!-- CTA -->
+<div class="cta">
+
+<h2>Un partenaire solide pour vos projets industriels</h2>
+
+<p>
+  Bâtir & Co vous accompagne avec des solutions fiables,
+  une expertise reconnue et un suivi professionnel
+  à chaque étape de votre projet.
+</p>
+
+<div style="margin-top:30px;">
+  <a class="btn btn-primary" href="mailto:info@demo-com.fr">
+    📩 Contactez-nous
+  </a>
+</div>
+
+</div>
+
+<!-- RETURN -->
+<div class="return">
+  <a class="btn" href="../index.html">⬅ Retour à l’accueil</a>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  © 2026 – Bâtir & Co • Construction & ingénierie industrielle
+</div>
+
+</div>
+</div>
+
+<!-- SCRIPT -->
 <script>
 
-const carousel =
-document.getElementById('carousel');
+const carousel=document.getElementById('carousel');
+const dots=document.querySelectorAll('.dot');
 
-const dots =
-document.querySelectorAll('.dot');
+let currentSlide=0;
 
-let currentSlide = 0;
-
-const totalSlides =
-document.querySelectorAll('.carousel-slide').length;
+const totalSlides=document.querySelectorAll('.carousel-slide').length;
 
 function updateCarousel(){
-
-carousel.style.transform =
-`translateX(-${currentSlide * 100}%)`;
-
-dots.forEach(dot =>
-dot.classList.remove('active'));
-
-dots[currentSlide]
-.classList.add('active');
-
+  carousel.style.transform=`translateX(-${currentSlide * 100}%)`;
+  dots.forEach(dot=>dot.classList.remove('active'));
+  dots[currentSlide].classList.add('active');
 }
 
 function moveSlide(direction){
-
-currentSlide =
-(currentSlide + direction + totalSlides)
-% totalSlides;
-
-updateCarousel();
-
+  currentSlide=(currentSlide + direction + totalSlides)%totalSlides;
+  updateCarousel();
 }
 
 function goToSlide(index){
-
-currentSlide = index;
-
-updateCarousel();
-
+  currentSlide=index;
+  updateCarousel();
 }
 
-/* AUTO SLIDE */
+setInterval(()=>{
+  moveSlide(1);
+},5000);
 
-setInterval(() => {
+/* MOBILE MENU */
 
-moveSlide(1);
+const menuToggle=document.getElementById('menuToggle');
+const topNav=document.getElementById('topNav');
 
-}, 5000);
+menuToggle.addEventListener('click',()=>{
+  topNav.classList.toggle('show');
+});
 
 </script>
 
