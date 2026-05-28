@@ -84,8 +84,6 @@ body{
 
 /* ===== NAV ===== */
 
-/* ===== NAV ===== */
-
 .top-nav{
   position:absolute;
   top:25px;
@@ -156,7 +154,7 @@ body{
     height:300px;
   }
 
-  /* MOBILE NAV */
+  /* SHOW HAMBURGER */
 
   .menu-toggle{
     display:flex;
@@ -164,22 +162,30 @@ body{
     justify-content:center;
   }
 
+  /* HIDE MENU BY DEFAULT */
+
   .top-nav{
+    display:none;
+
     position:absolute;
     top:85px;
     right:20px;
     left:auto;
-    transform:none;
 
-    display:none;
+    transform:none;
     flex-direction:column;
     gap:10px;
 
-    background:rgba(0,0,0,0.75);
+    background:rgba(0,0,0,0.85);
     padding:15px;
     border-radius:18px;
+
     backdrop-filter:blur(8px);
+
+    z-index:25;
   }
+
+  /* SHOW WHEN CLICKED */
 
   .top-nav.show{
     display:flex;
@@ -188,7 +194,7 @@ body{
   .top-nav a{
     width:180px;
     text-align:center;
-    background:rgba(255,255,255,0.12);
+    padding:12px 16px;
   }
 
 }
@@ -442,32 +448,6 @@ footer{
   color:white;
   text-align:center;
   padding:25px;
-}
-
-/* ===== MOBILE ===== */
-
-@media(max-width:850px){
-
-  .hero{
-    min-height:420px;
-  }
-
-  .hero h1{
-    font-size:2.3rem;
-  }
-
-  .section{
-    padding:25px;
-  }
-
-  .contact-grid{
-    grid-template-columns:1fr;
-  }
-
-  #slideshow{
-    height:300px;
-  }
-
 }
 
 </style>
