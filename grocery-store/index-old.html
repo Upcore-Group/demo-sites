@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mixt Market City - Épicerie de l'Est à Toulouse</title>
+
+<link rel="icon" href="logo/logo.png">
+
+<link rel="stylesheet" href="../common/style.css">
+
+<style>
+
+/* ===== RESET ===== */
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color:#222;
+  line-height:1.7;
+}
+
+/* ===== HERO ===== */
+
+.hero{
+  position:relative;
+  min-height:500px;
+  background:
+    linear-gradient(rgba(40, 129, 255, 0.55), rgba(39, 56, 244, 0.55)),
+    url("images/photo1.png") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+  overflow:hidden;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  width:600px;
+  height:600px;
+  background:rgba(255,255,255,0.04);
+  border-radius:50%;
+  top:-250px;
+  right:-180px;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:800px;
+  padding:20px;
+}
+
+.hero h1{
+  margin:0;
+  font-size:3.2rem;
+  letter-spacing:1px;
+}
+
+.hero p{
+  margin-top:18px;
+  font-size:1.2rem;
+  line-height:1.8;
+}
+
+.hero-buttons{
+  margin-top:30px;
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+/* ===== NAV ===== */
+
+.top-nav{
+  position:absolute;
+  top:25px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:10;
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.top-nav a{
+  color:white;
+  text-decoration:none;
+  padding:10px 18px;
+  border-radius:30px;
+  background:rgba(255,255,255,0.12);
+  backdrop-filter:blur(5px);
+  transition:0.3s;
+  font-weight:bold;
+}
+
+.top-nav a:hover{
+  background:rgba(255,255,255,0.22);
+}
+
+/* ===== MOBILE MENU BUTTON ===== */
+
+.menu-toggle{
+  display:none;
+  position:absolute;
+  top:20px;
+  right:20px;
+  z-index:30;
+  border:none;
+  background:rgba(255,255,255,0.15);
+  color:white;
+  font-size:28px;
+  width:52px;
+  height:52px;
+  border-radius:14px;
+  backdrop-filter:blur(5px);
+  cursor:pointer;
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:850px){
+
+  .hero{
+    min-height:420px;
+  }
+
+  .hero h1{
+    font-size:2.3rem;
+  }
+
+  .section{
+    padding:25px;
+  }
+
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  #slideshow{
+    height:300px;
+  }
+
+  /* SHOW HAMBURGER */
+
+  .menu-toggle{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  /* HIDE MENU BY DEFAULT */
+
+  .top-nav{
+    display:none;
+
+    position:absolute;
+    top:85px;
+    right:20px;
+    left:auto;
+
+    transform:none;
+    flex-direction:column;
+    gap:10px;
+
+    background:rgba(0,0,0,0.85);
+    padding:15px;
+    border-radius:18px;
+
+    backdrop-filter:blur(8px);
+
+    z-index:25;
+  }
+
+  /* SHOW WHEN CLICKED */
+
+  .top-nav.show{
+    display:flex;
+  }
+
+  .top-nav a{
+    width:180px;
+    text-align:center;
+    padding:12px 16px;
+  }
+
+}
+
+/* ===== BUTTONS ===== */
+
+.btn{
+  display:inline-block;
+  padding:14px 28px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.btn-primary{
+  background:#ffcc00;
+  color:#111;
+  box-shadow:0 10px 25px rgba(255,204,0,0.3);
+}
+
+.btn-primary:hover{
+  transform:translateY(-4px);
+  background:#ffd633;
+}
+
+.btn-secondary{
+  background:rgba(255,255,255,0.15);
+  color:white;
+  border:1px solid rgba(255,255,255,0.2);
+}
+
+.btn-secondary:hover{
+  background:rgba(255,255,255,0.25);
+}
+
+/* ===== MAIN ===== */
+
+.container{
+  width:100%;
+  max-width:1200px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+/* ===== INFO CARDS ===== */
+
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+  gap:20px;
+  margin-top:-90px;
+  position:relative;
+  z-index:20;
+}
+
+.info-card{
+  background:white;
+  padding:28px;
+  border-radius:18px;
+  text-align:center;
+  box-shadow:0 12px 30px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+
+.info-card:hover{
+  transform:translateY(-6px);
+}
+
+.info-card h3{
+  margin:12px 0 10px;
+  color:#005dbb;
+}
+
+/* ===== SECTIONS ===== */
+
+.section{
+  background:white;
+  margin-top:28px;
+  padding:40px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+}
+
+.section-title{
+  font-size:2rem;
+  margin-top:0;
+  margin-bottom:18px;
+  color:#0d2b52;
+}
+
+/* ===== ABOUT ===== */
+
+.about{
+  font-size:1.05rem;
+  color:#444;
+}
+
+/* ===== SOCIAL ===== */
+
+.social{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  margin-top:30px;
+  flex-wrap:wrap;
+}
+
+.social a{
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:white;
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.social a:hover{
+  transform:translateY(-5px) scale(1.05);
+}
+
+.social img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* ===== SLIDESHOW ===== */
+
+.slideshow-wrapper{
+  margin-top:35px;
+  text-align:center;
+}
+
+#slideshow{
+  width:100%;
+  max-width:900px;
+  height:500px;
+  object-fit:cover;
+  border-radius:20px;
+  transition:opacity 1s, transform 0.5s;
+  box-shadow:0 15px 40px rgba(0,0,0,0.15);
+}
+
+#slideshow:hover{
+  transform:scale(1.01);
+}
+
+/* ===== PRODUCTS ===== */
+
+.products-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+  gap:20px;
+  margin-top:25px;
+}
+
+.product-card{
+  background:#f8fbff;
+  padding:25px;
+  border-radius:16px;
+  border:1px solid #e6eef8;
+  transition:0.3s;
+}
+
+.product-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 12px 25px rgba(0,0,0,0.08);
+}
+
+.product-card h4{
+  margin-top:0;
+  color:#005dbb;
+}
+
+/* ===== CONTACT ===== */
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  margin-top:25px;
+}
+
+.contact-box{
+  background:#f8fbff;
+  padding:25px;
+  border-radius:16px;
+}
+
+.contact-box p{
+  margin-bottom:14px;
+}
+
+/* ===== MAP ===== */
+
+.map{
+  width:100%;
+  height:100%;
+  min-height:350px;
+  border:0;
+  border-radius:18px;
+}
+
+/* ===== CTA ===== */
+
+.cta{
+  margin-top:30px;
+  background:linear-gradient(135deg,rgba(40, 129, 255, 0.55), rgba(39, 56, 244, 0.55));
+  color:white;
+  text-align:center;
+  padding:45px 30px;
+  border-radius:20px;
+}
+
+.cta h2{
+  margin-top:0;
+  font-size:2rem;
+}
+
+.cta p{
+  max-width:700px;
+  margin:auto;
+}
+
+/* ===== RETURN BUTTON ===== */
+
+.return{
+  margin-top:35px;
+  text-align:center;
+}
+
+.return .btn{
+  background:#edf3fb;
+  color:#0d2b52;
+}
+
+.return .btn:hover{
+  background:#dce7f6;
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+  margin-top:40px;
+  background:#0d2b52;
+  color:white;
+  text-align:center;
+  padding:25px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+
+  <!-- MOBILE MENU BUTTON -->
+  <button class="menu-toggle" id="menuToggle">
+    ☰
+  </button>
+
+<!-- NAV -->
+  <nav class="top-nav" id="topNav">
+    <a href="#apropos">À propos</a>
+    <a href="#produits">Produits</a>
+    <a href="#horaires">Horaires</a>
+    <a href="#contact">Contact</a>
+   </nav>
+
+  <div class="hero-content">
+
+    <h1>Mixt Market City</h1>
+
+    <p>
+      Votre épicerie spécialisée en produits d’Europe de l’Est à Toulouse.
+    </p>
+    <!--  Découvrez des saveurs authentiques, des produits traditionnels
+      et une sélection unique venue de plusieurs pays d’Europe. -->
+
+    <div class="hero-buttons">
+
+      <a class="btn btn-primary"
+         href="https://www.google.com/maps/dir//Mixt+Market+City"
+         target="_blank">
+        📍 Nous trouver
+      </a>
+
+      <a class="btn btn-secondary"
+         href="tel:0953613753">
+        📞 Nous appeler
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- MAIN -->
+<div class="container">
+
+  <!-- INFO -->
+  <div class="info-grid">
+
+    <div class="info-card">
+      <div style="font-size:2rem;">🥟</div>
+      <h3>Produits authentiques</h3>
+      <p>
+        Une large sélection de spécialités d’Europe de l’Est.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <div style="font-size:2rem;">🛒</div>
+      <h3>Produits frais</h3>
+      <p>
+        Produits frais, surgelés et artisanaux chaque semaine.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <div style="font-size:2rem;">📍</div>
+      <h3>Situé à Toulouse</h3>
+      <p>
+        Facile d’accès avec parking et accueil chaleureux.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- ABOUT -->
+  <section class="section" id="apropos">
+
+    <h2 class="section-title">
+      À propos de nous
+    </h2>
+
+    <div class="about">
+
+      <p>
+        Bienvenue chez <strong>Mixt Market City</strong>,
+        votre destination incontournable pour retrouver les saveurs
+        traditionnelles d’Europe de l’Est à Toulouse.
+      </p>
+
+      <p>
+        Nous proposons une sélection de produits authentiques :
+        charcuterie, produits frais, conserves, confiseries,
+        boissons traditionnelles et spécialités artisanales.
+      </p>
+
+      <p>
+        Notre équipe vous accueille chaque jour dans une ambiance conviviale
+        avec des produits soigneusement sélectionnés pour leur qualité.
+      </p>
+
+    </div>
+
+    <!-- SOCIAL -->
+    <div class="social">
+
+      <a href="https://www.facebook.com/epicerierussee" target="_blank">
+        <img src="logo/fb.jpeg" alt="Facebook">
+      </a>
+
+      <a href="https://www.instagram.com/mixt.market_toulouse/" target="_blank">
+        <img src="logo/insta.jpeg" alt="Instagram">
+      </a>
+
+      <a href="https://www.tiktok.com/@mixt.market_toulouse" target="_blank">
+        <img src="logo/tik.png" alt="TikTok">
+      </a>
+
+    </div>
+
+    <!-- SLIDESHOW -->
+    <div class="slideshow-wrapper">
+
+      <img
+      id="slideshow"
+      src="images/photo1.png"
+      alt="Produits Mixt Market City">
+
+    </div>
+
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="section" id="produits">
+
+    <h2 class="section-title">
+      Nos produits
+    </h2>
+
+    <div class="products-grid">
+
+      <div class="product-card">
+        <h4>Produits frais</h4>
+        <p>
+          Produits laitiers, viandes, charcuteries et spécialités maison.
+        </p>
+      </div>
+
+      <div class="product-card">
+        <h4>Épicerie sucrée & salée</h4>
+        <p>
+          Snacks, chocolats, biscuits et produits traditionnels.
+        </p>
+      </div>
+
+      <div class="product-card">
+        <h4>Boissons traditionnelles</h4>
+        <p>
+          Jus, sodas, boissons artisanales et saveurs typiques.
+        </p>
+      </div>
+
+      <div class="product-card">
+        <h4>Produits surgelés</h4>
+        <p>
+          Pelmeni, vareniki et autres spécialités d’Europe de l’Est.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- HOURS -->
+  <section class="section" id="horaires">
+
+    <h2 class="section-title">
+      Horaires
+    </h2>
+
+    <p style="font-size:1.1rem;">
+      🕘 Ouvert 7j/7 : 9h00 – 20h00
+    </p>
+
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+
+    <h2 class="section-title">
+      Contact & localisation
+    </h2>
+
+    <div class="contact-grid">
+
+      <div class="contact-box">
+
+        <p>📍 109 Av. des États-Unis, 31200 Toulouse</p>
+
+        <p>📞 09 53 61 37 53</p>
+
+        <p>📞 05 64 72 19 79</p>
+
+        <p>✉️ contact@mixtmarketcity.fr</p>
+
+        <p>
+          Nous vous accueillons tous les jours avec des produits authentiques
+          et une équipe à votre écoute.
+        </p>
+
+      </div>
+
+      <iframe
+      class="map"
+      src="https://www.google.com/maps?q=Mixt+Market+City+Toulouse&output=embed"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="cta">
+
+      <h2>
+        Découvrez les saveurs de l’Europe de l’Est
+      </h2>
+
+      <p>
+        Venez découvrir des produits authentiques, des nouveautés chaque semaine
+        et une ambiance conviviale au cœur de Toulouse.
+      </p>
+
+    </div>
+
+    <!-- RETURN -->
+    <div class="return">
+
+      <a class="btn" href="../index.html">
+        ⬅ Retour à l’accueil
+      </a>
+
+    </div>
+
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+
+  <p>
+    © 2026 Mixt Market City • Toulouse
+  </p>
+
+</footer>
+
+<!-- SLIDESHOW SCRIPT -->
+<!--'https://api.github.com/repos/orbit-web-foundry/mixmarket/contents/images';-->
+<script>
+
+const repoUrl = "https://api.github.com/repos/Upcore-Group/demo-sites/contents/grocery-store/images";
+
+fetch(repoUrl)
+.then(r => r.json())
+.then(files => {
+
+const images =
+files
+.filter(f =>
+f.name.match(/\.(jpg|png|jpeg|gif)$/i))
+.map(f =>
+f.download_url);
+
+if(images.length === 0)
+return;
+
+let index = 0;
+
+const img =
+document.getElementById('slideshow');
+
+img.src =
+images[index];
+
+setInterval(() => {
+
+index =
+(index + 1) %
+images.length;
+
+img.style.opacity = 0;
+
+setTimeout(() => {
+
+img.src =
+images[index];
+
+img.style.opacity = 1;
+
+}, 500);
+
+}, 6000);
+
+})
+
+.catch(err =>
+console.error(
+'Error fetching images:',
+err));
+
+
+const menuToggle =
+document.getElementById('menuToggle');
+
+const topNav =
+document.getElementById('topNav');
+
+menuToggle.addEventListener('click', () => {
+
+  topNav.classList.toggle('show');
+
+});
+
+</script>
+
+</body>
+</html>
