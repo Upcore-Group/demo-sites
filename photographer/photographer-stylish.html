@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Studio Lumière — Photographe à Toulouse</title>
+<meta name="description" content="Studio Lumière — photographie de mariage, portrait, événementiel et entreprise à Toulouse.">
+
+<link rel="icon" href="logo/logo.png">
+
+<style>
+/* =========================================================
+   BASE
+========================================================= */
+:root {
+  --ink: #171717;
+  --muted: #737373;
+  --paper: #f7f6f2;
+  --white: #fff;
+  --line: rgba(23,23,23,.12);
+  --accent: #b28a5b;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* =========================================================
+   NAV
+========================================================= */
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  width: 100%;
+  padding: 28px 5vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: white;
+}
+
+.brand {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: .9rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  opacity: .9;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+}
+
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+.hero {
+  min-height: 92vh;
+  position: relative;
+
+  display: flex;
+  align-items: flex-end;
+
+  padding: 130px 7vw 90px;
+
+  color: white;
+  overflow: hidden;
+
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.68)),
+    url("images/photo1.jpg") center / cover no-repeat;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+}
+
+.eyebrow {
+  margin-bottom: 18px;
+  color: #e5d3bd;
+  font-size: .8rem;
+  font-weight: bold;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0;
+  max-width: 900px;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.5rem, 9vw, 8.5rem);
+  font-weight: 400;
+  line-height: .88;
+  letter-spacing: -.055em;
+}
+
+.hero-text {
+  max-width: 570px;
+  margin: 32px 0 0;
+
+  font-size: 1.08rem;
+  color: rgba(255,255,255,.88);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 50px;
+  padding: 13px 25px;
+
+  border: 1px solid rgba(255,255,255,.45);
+  border-radius: 999px;
+
+  color: white;
+  text-decoration: none;
+  font-size: .9rem;
+  letter-spacing: .06em;
+
+  transition: .25s ease;
+}
+
+.btn:hover {
+  background: white;
+  color: var(--ink);
+}
+
+.btn-solid {
+  background: white;
+  color: var(--ink);
+  border-color: white;
+}
+
+.scroll-note {
+  position: absolute;
+  right: 7vw;
+  bottom: 55px;
+
+  writing-mode: vertical-rl;
+
+  font-size: .7rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  opacity: .7;
+}
+
+/* =========================================================
+   INTRO
+========================================================= */
+.intro {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 8vw;
+
+  padding: 120px 9vw;
+}
+
+.kicker {
+  color: var(--accent);
+  font-size: .75rem;
+  font-weight: bold;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+
+.intro h2,
+.section-title {
+  margin: 15px 0 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -.035em;
+}
+
+.intro-copy {
+  max-width: 650px;
+  color: #4e4e4e;
+  font-size: 1.08rem;
+}
+
+/* =========================================================
+   PORTFOLIO
+========================================================= */
+.portfolio {
+  padding: 30px 5vw 120px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+  margin: 0 4vw 35px;
+}
+
+.section-heading p {
+  max-width: 350px;
+  margin: 0;
+  color: var(--muted);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr .95fr;
+  grid-template-rows: 330px 330px;
+  gap: 14px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  background: #ddd;
+}
+
+.gallery-item:first-child {
+  grid-row: span 2;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform .7s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.045);
+}
+
+.gallery-label {
+  position: absolute;
+  left: 22px;
+  bottom: 18px;
+
+  padding: 7px 12px;
+
+  background: rgba(0,0,0,.55);
+  color: white;
+
+  font-size: .72rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+}
+
+/* =========================================================
+   SERVICES
+========================================================= */
+.services {
+  padding: 100px 9vw;
+  background: #181818;
+  color: white;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 65px;
+  border-top: 1px solid rgba(255,255,255,.15);
+}
+
+.service {
+  padding: 35px 28px 35px 0;
+  border-right: 1px solid rgba(255,255,255,.15);
+}
+
+.service:not(:first-child) {
+  padding-left: 28px;
+}
+
+.service:last-child {
+  border-right: 0;
+}
+
+.service-number {
+  color: #a98a68;
+  font-family: Georgia, serif;
+  font-size: 1.3rem;
+}
+
+.service h3 {
+  margin: 28px 0 12px;
+  font-family: Georgia, serif;
+  font-size: 1.7rem;
+  font-weight: 400;
+}
+
+.service p {
+  color: #aaa;
+}
+
+/* =========================================================
+   QUOTE
+========================================================= */
+.quote {
+  padding: 130px 9vw;
+  text-align: center;
+}
+
+.quote blockquote {
+  max-width: 900px;
+  margin: auto;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4.5vw, 4.5rem);
+  line-height: 1.05;
+  font-weight: 400;
+}
+
+.quote span {
+  display: block;
+  margin-top: 28px;
+
+  color: var(--muted);
+  font-size: .75rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 500px;
+}
+
+.contact-image {
+  min-height: 500px;
+  background:
+    linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.3)),
+    url("images/photo2.jpg") center / cover no-repeat;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 70px 9vw;
+  background: #ebe8e0;
+}
+
+.contact-info h2 {
+  margin: 12px 0 28px;
+
+  font-family: Georgia, serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.contact-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-list li {
+  margin: 12px 0;
+}
+
+.contact-link {
+  color: #4b3c2d;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(75,60,45,.25);
+}
+
+.contact-link:hover {
+  border-bottom-color: currentColor;
+}
+
+.contact-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.contact-btn {
+  border-color: #8d7b66;
+  color: #3c332b;
+}
+
+.contact-btn:hover {
+  background: #3c332b;
+  color: white;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+footer {
+  padding: 35px 7vw;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+
+  background: #181818;
+  color: #aaa;
+
+  font-size: .8rem;
+}
+
+footer strong {
+  color: white;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+@media (max-width: 800px) {
+
+  .nav {
+    padding: 22px 22px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+
+    position: absolute;
+    top: 72px;
+    right: 18px;
+
+    flex-direction: column;
+    gap: 0;
+
+    padding: 10px;
+
+    background: rgba(20,20,20,.94);
+    border-radius: 12px;
+    backdrop-filter: blur(12px);
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    min-width: 190px;
+    padding: 13px 16px;
+  }
+
+  .hero {
+    min-height: 760px;
+    padding: 130px 25px 70px;
+    align-items: flex-end;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.3rem, 18vw, 5.5rem);
+  }
+
+  .scroll-note {
+    display: none;
+  }
+
+  .intro {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 80px 25px;
+  }
+
+  .portfolio {
+    padding: 20px 18px 80px;
+  }
+
+  .section-heading {
+    display: block;
+    margin: 0 7px 25px;
+  }
+
+  .section-heading p {
+    margin-top: 18px;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 300px);
+  }
+
+  .gallery-item:first-child {
+    grid-row: auto;
+  }
+
+  .services {
+    padding: 80px 25px;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+    margin-top: 40px;
+  }
+
+  .service,
+  .service:not(:first-child) {
+    padding: 28px 0;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255,255,255,.15);
+  }
+
+  .service:last-child {
+    border-bottom: 0;
+  }
+
+  .quote {
+    padding: 90px 25px;
+  }
+
+  .contact {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-image {
+    min-height: 360px;
+  }
+
+  .contact-info {
+    padding: 70px 25px;
+  }
+
+  footer {
+    padding: 28px 25px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =======================================================
+     NAVIGATION
+======================================================== -->
+<header class="nav">
+
+  <a class="brand" href="#">
+    Studio Lumière
+  </a>
+
+  <nav class="nav-links" id="navLinks">
+    <a href="#portfolio">Portfolio</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <button
+    class="menu-toggle"
+    id="menuToggle"
+    type="button"
+    aria-label="Ouvrir le menu"
+    aria-expanded="false">
+    ☰
+  </button>
+
+</header>
+
+
+<!-- =======================================================
+     HERO
+======================================================== -->
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="eyebrow">
+      Photographe · Toulouse · France
+    </div>
+
+    <h1>
+      Des images<br>
+      qui racontent.
+    </h1>
+
+    <p class="hero-text">
+      Portraits, mariages, événements et photographie
+      professionnelle — des images naturelles, élégantes
+      et intemporelles.
+    </p>
+
+    <div class="hero-actions">
+
+      <a class="btn btn-solid" href="#portfolio">
+        Voir le portfolio
+      </a>
+
+      <a class="btn" href="#contact">
+        Parlons de votre projet
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="scroll-note">
+    Défiler pour découvrir
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     INTRO
+======================================================== -->
+<section class="intro">
+
+  <div>
+    <div class="kicker">
+      À propos
+    </div>
+
+    <h2>
+      L'émotion<br>
+      avant tout.
+    </h2>
+  </div>
+
+  <div class="intro-copy">
+
+    <p>
+      Je crée des photographies qui privilégient les vrais
+      moments, les gestes spontanés et la lumière naturelle.
+      L'objectif : raconter votre histoire avec une esthétique
+      simple, moderne et authentique.
+    </p>
+
+    <p>
+      Que ce soit pour votre mariage, votre famille, votre
+      entreprise ou un projet personnel, chaque séance est
+      préparée avec attention pour créer des images qui
+      auront encore du sens dans plusieurs années.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     PORTFOLIO
+======================================================== -->
+<section class="portfolio" id="portfolio">
+
+  <div class="section-heading">
+
+    <div>
+      <div class="kicker">
+        Sélection
+      </div>
+
+      <h2 class="section-title">
+        Portfolio
+      </h2>
+    </div>
+
+    <p>
+      Quelques univers photographiques.
+      Remplacez les images par vos propres réalisations.
+    </p>
+
+  </div>
+
+
+  <div class="gallery">
+
+    <article class="gallery-item">
+      <img src="images/photo1.jpg" alt="Photographie de mariage">
+      <span class="gallery-label">Mariage</span>
+    </article>
+
+    <article class="gallery-item">
+      <img src="images/photo2.jpg" alt="Portrait professionnel">
+      <span class="gallery-label">Portrait</span>
+    </article>
+
+    <article class="gallery-item">
+      <img src="images/photo3.jpg" alt="Photographie événementielle">
+      <span class="gallery-label">Événement</span>
+    </article>
+
+    <article class="gallery-item">
+      <img src="images/photo4.jpg" alt="Photographie lifestyle">
+      <span class="gallery-label">Lifestyle</span>
+    </article>
+
+    <article class="gallery-item">
+      <img src="images/photo5.jpg" alt="Photographie entreprise">
+      <span class="gallery-label">Entreprise</span>
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     SERVICES
+======================================================== -->
+<section class="services" id="services">
+
+  <div class="kicker">
+    Prestations
+  </div>
+
+  <h2 class="section-title">
+    Des formules<br>
+    pour chaque histoire.
+  </h2>
+
+
+  <div class="service-grid">
+
+    <article class="service">
+
+      <div class="service-number">01</div>
+
+      <h3>
+        Mariage
+      </h3>
+
+      <p>
+        Une présence discrète pour capturer les émotions,
+        les détails et les moments que vous ne voulez pas
+        oublier.
+      </p>
+
+    </article>
+
+
+    <article class="service">
+
+      <div class="service-number">02</div>
+
+      <h3>
+        Portrait
+      </h3>
+
+      <p>
+        Portrait personnel ou professionnel, en studio
+        ou en extérieur, avec une approche naturelle.
+      </p>
+
+    </article>
+
+
+    <article class="service">
+
+      <div class="service-number">03</div>
+
+      <h3>
+        Entreprise
+      </h3>
+
+      <p>
+        Photos corporate, équipes, locaux, produits et
+        contenu visuel pour votre communication.
+      </p>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     QUOTE
+======================================================== -->
+<section class="quote">
+
+  <blockquote>
+    « Les meilleures photographies
+    ne montrent pas seulement
+    un moment. Elles font ressentir
+    ce moment. »
+  </blockquote>
+
+  <span>
+    Studio Lumière
+  </span>
+
+</section>
+
+
+<!-- =======================================================
+     CONTACT
+======================================================== -->
+<section class="contact" id="contact">
+
+  <div class="contact-image"></div>
+
+  <div class="contact-info">
+
+    <div class="kicker">
+      Parlons-nous
+    </div>
+
+    <h2>
+      Votre projet<br>
+      commence ici.
+    </h2>
+
+    <ul class="contact-list">
+
+      <li>
+        📍
+        <a
+          class="contact-link"
+          href="https://www.google.com/maps/dir/?api=1&destination=Toulouse"
+          target="_blank"
+          rel="noopener noreferrer">
+          Toulouse, France
+        </a>
+      </li>
+
+      <li>
+        📞
+        <a
+          class="contact-link"
+          href="tel:+33600000000">
+          06 00 00 00 00
+        </a>
+      </li>
+
+      <li>
+        ✉️
+        <a
+          class="contact-link"
+          href="mailto:contact@example.fr">
+          contact@example.fr
+        </a>
+      </li>
+
+    </ul>
+
+
+    <div class="contact-buttons">
+
+      <a
+        class="btn contact-btn"
+        href="mailto:contact@example.fr">
+        Demander un devis
+      </a>
+
+      <a
+        class="btn contact-btn"
+        href="tel:+33600000000">
+        Appeler
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     FOOTER
+======================================================== -->
+<footer>
+
+  <div>
+    © 2026 <strong>Studio Lumière</strong>
+  </div>
+
+  <div>
+    Photographe à Toulouse
+  </div>
+
+</footer>
+
+
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = navLinks.classList.toggle("show");
+
+  menuToggle.setAttribute(
+    "aria-expanded",
+    isOpen ? "true" : "false"
+  );
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("show");
+    menuToggle.setAttribute("aria-expanded", "false");
+  });
+});
+</script>
+
+</body>
+</html>
