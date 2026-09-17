@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -7,13 +8,18 @@
 
   <title>Mixt Market City - Épicerie de l'Est à Toulouse</title>
 
+  <meta
+    name="description"
+    content="Mixt Market City à Toulouse : découvrez une sélection de produits authentiques d'Europe de l'Est, produits frais, spécialités, boissons et produits surgelés."
+  >
+
   <link rel="icon" href="logo/logo.png">
   <link rel="stylesheet" href="../common/style.css">
 
   <style>
 
     /* =========================================================
-       RESET & BASE
+       RESET
     ========================================================= */
 
     * {
@@ -27,9 +33,13 @@
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #ffffff;
-      color: #222;
+      background: #f7f2e9;
+      color: #29251f;
       line-height: 1.7;
+    }
+
+    img {
+      max-width: 100%;
     }
 
     a {
@@ -43,80 +53,113 @@
 
     .hero {
       position: relative;
-      min-height: 540px;
+      min-height: 720px;
 
       display: flex;
       align-items: center;
       justify-content: center;
 
-      padding: 100px 20px 60px;
+      padding: 120px 25px 80px;
 
       background:
         linear-gradient(
-          rgba(40, 129, 255, 0.55),
-          rgba(39, 56, 244, 0.55)
+          90deg,
+          rgba(30, 25, 19, 0.86),
+          rgba(30, 25, 19, 0.48),
+          rgba(30, 25, 19, 0.28)
         ),
         url("images/photo1.png") center / cover no-repeat;
 
       color: white;
-      text-align: center;
       overflow: hidden;
     }
 
-    .hero::after {
+    .hero::before {
       content: "";
       position: absolute;
+      inset: 0;
 
-      width: 600px;
-      height: 600px;
+      background:
+        radial-gradient(
+          circle at 15% 80%,
+          rgba(155, 38, 52, 0.35),
+          transparent 35%
+        );
 
-      top: -250px;
-      right: -180px;
-
-      background: rgba(255, 255, 255, 0.04);
-      border-radius: 50%;
+      pointer-events: none;
     }
 
     .hero-content {
       position: relative;
-      z-index: 2;
+      z-index: 3;
 
       width: 100%;
-      max-width: 800px;
+      max-width: 1150px;
 
-      padding: 20px;
+      margin: auto;
+
+      text-align: left;
+    }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      padding: 8px 15px;
+
+      border-left: 3px solid #d6a84f;
+
+      background: rgba(0, 0, 0, 0.28);
+
+      color: #f3d58a;
+
+      font-size: 0.85rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     .hero h1 {
-      margin: 0;
+      max-width: 850px;
 
-      font-size: 3.2rem;
-      line-height: 1.2;
-      letter-spacing: 1px;
+      margin: 22px 0 0;
+
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: clamp(3rem, 7vw, 6rem);
+
+      line-height: 0.98;
+
+      letter-spacing: -2px;
     }
 
-    .hero p {
-      margin: 20px auto 0;
+    .hero h1 span {
+      color: #e3bd68;
+    }
 
-      max-width: 700px;
+    .hero-description {
+      max-width: 650px;
+
+      margin: 28px 0 0;
 
       font-size: 1.2rem;
       line-height: 1.8;
+
+      color: rgba(255,255,255,0.88);
     }
 
 
     /* =========================================================
-       HERO BUTTONS
+       HERO ACTIONS
     ========================================================= */
 
     .hero-buttons {
       display: flex;
-      justify-content: center;
-      align-items: center;
       flex-wrap: wrap;
-      gap: 15px;
+      gap: 14px;
 
-      margin-top: 30px;
+      margin-top: 35px;
     }
 
     .btn {
@@ -124,38 +167,50 @@
       align-items: center;
       justify-content: center;
 
-      min-height: 50px;
-      padding: 14px 28px;
+      min-height: 52px;
 
-      border-radius: 50px;
+      padding: 14px 25px;
+
+      border-radius: 4px;
 
       text-decoration: none;
+
       font-weight: bold;
 
-      transition: 0.3s;
+      transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
     }
 
     .btn-primary {
-      background: #ffcc00;
-      color: #111;
+      background: #a72d3f;
+      color: white;
 
-      box-shadow: 0 10px 25px rgba(255, 204, 0, 0.3);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
     }
 
     .btn-primary:hover {
-      transform: translateY(-4px);
-      background: #ffd633;
+      background: #c13a4d;
     }
 
     .btn-secondary {
-      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255,255,255,0.45);
+
+      background: rgba(255,255,255,0.08);
+
       color: white;
 
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(8px);
     }
 
     .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.25);
+      background: white;
+      color: #29251f;
     }
 
 
@@ -166,47 +221,68 @@
     .top-nav {
       position: absolute;
 
-      top: 25px;
-      left: 50%;
-
-      transform: translateX(-50%);
+      top: 0;
+      left: 0;
 
       z-index: 20;
 
+      width: 100%;
+
       display: flex;
+      align-items: center;
       justify-content: center;
-      flex-wrap: wrap;
 
-      gap: 14px;
+      gap: 8px;
 
-      width: calc(100% - 40px);
-      max-width: 900px;
+      padding: 20px 25px;
+
+      border-bottom: 1px solid rgba(255,255,255,0.15);
     }
 
     .top-nav a {
+      position: relative;
+
+      padding: 9px 17px;
+
       color: white;
+
       text-decoration: none;
 
-      padding: 10px 18px;
-
-      border-radius: 30px;
-
-      background: rgba(255, 255, 255, 0.12);
-
-      backdrop-filter: blur(5px);
-
+      font-size: 0.92rem;
       font-weight: bold;
 
-      transition: 0.3s;
+      transition: color 0.25s ease;
+    }
+
+    .top-nav a::after {
+      content: "";
+
+      position: absolute;
+
+      left: 50%;
+      bottom: 2px;
+
+      width: 0;
+      height: 2px;
+
+      background: #e3bd68;
+
+      transform: translateX(-50%);
+
+      transition: width 0.25s ease;
     }
 
     .top-nav a:hover {
-      background: rgba(255, 255, 255, 0.22);
+      color: #e3bd68;
+    }
+
+    .top-nav a:hover::after {
+      width: 60%;
     }
 
 
     /* =========================================================
-       MOBILE MENU BUTTON
+       MOBILE MENU
     ========================================================= */
 
     .menu-toggle {
@@ -214,163 +290,219 @@
 
       position: absolute;
 
-      top: 20px;
-      right: 20px;
+      top: 18px;
+      right: 18px;
 
       z-index: 30;
 
-      width: 52px;
-      height: 52px;
+      width: 50px;
+      height: 50px;
 
-      border: none;
-      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.25);
 
-      background: rgba(255, 255, 255, 0.15);
+      border-radius: 4px;
+
+      background: rgba(0,0,0,0.35);
 
       color: white;
-      font-size: 28px;
 
-      backdrop-filter: blur(5px);
+      font-size: 25px;
 
       cursor: pointer;
     }
 
 
     /* =========================================================
-       MAIN CONTAINER
+       OPENING HOURS BAR
+    ========================================================= */
+
+    .opening-bar {
+      position: relative;
+      z-index: 10;
+
+      margin-top: -45px;
+    }
+
+    .opening-inner {
+      max-width: 1150px;
+
+      margin: auto;
+
+      padding: 20px 28px;
+
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+
+      align-items: center;
+
+      background: #29251f;
+
+      color: white;
+
+      box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+    }
+
+    .opening-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      font-size: 0.95rem;
+    }
+
+    .opening-item strong {
+      color: #e3bd68;
+    }
+
+    .opening-center {
+      padding: 0 35px;
+
+      border-left: 1px solid rgba(255,255,255,0.15);
+      border-right: 1px solid rgba(255,255,255,0.15);
+
+      text-align: center;
+
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 1.15rem;
+    }
+
+
+    /* =========================================================
+       MAIN
     ========================================================= */
 
     .container {
       width: 100%;
-      max-width: 1200px;
+      max-width: 1150px;
 
-      margin: 0 auto;
+      margin: auto;
 
-      padding: 40px 20px;
+      padding: 80px 20px;
     }
 
 
     /* =========================================================
-       INFO CARDS
+       SECTION HEADER
     ========================================================= */
 
-    .info-grid {
-      position: relative;
-      z-index: 5;
+    .section-header {
+      max-width: 720px;
 
-      display: grid;
-      grid-template-columns: repeat(
-        auto-fit,
-        minmax(240px, 1fr)
-      );
-
-      gap: 20px;
-
-      /*
-       * Desktop: cards slightly overlap the hero.
-       */
-      margin-top: -90px;
+      margin-bottom: 40px;
     }
 
-    .info-card {
-      padding: 28px;
+    .section-kicker {
+      display: block;
 
-      background: white;
+      margin-bottom: 10px;
 
-      border-radius: 18px;
+      color: #a72d3f;
 
-      text-align: center;
+      font-size: 0.78rem;
+      font-weight: bold;
 
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-
-      transition: 0.3s;
-    }
-
-    .info-card:hover {
-      transform: translateY(-6px);
-    }
-
-    .info-card-icon {
-      font-size: 2rem;
-    }
-
-    .info-card h3 {
-      margin: 12px 0 10px;
-
-      color: #005dbb;
-    }
-
-
-    /* =========================================================
-       SECTIONS
-    ========================================================= */
-
-    .section {
-      margin-top: 28px;
-      padding: 40px;
-
-      background: white;
-
-      border-radius: 20px;
-
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     .section-title {
-      margin: 0 0 18px;
+      margin: 0;
 
-      color: #0d2b52;
+      font-family: Georgia, "Times New Roman", serif;
 
-      font-size: 2rem;
-      line-height: 1.3;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+
+      line-height: 1.15;
+
+      color: #29251f;
     }
 
+    .section-description {
+      margin-top: 18px;
 
-    /* =========================================================
-       ABOUT
-    ========================================================= */
+      color: #665f55;
 
-    .about {
-      color: #444;
       font-size: 1.05rem;
     }
 
 
     /* =========================================================
-       SOCIAL LINKS
+       INTRO
+    ========================================================= */
+
+    .intro {
+      display: grid;
+
+      grid-template-columns: 1.1fr 0.9fr;
+
+      gap: 60px;
+
+      align-items: center;
+    }
+
+    .intro-text p {
+      color: #554f47;
+    }
+
+    .intro-highlight {
+      margin-top: 25px;
+
+      padding: 20px 24px;
+
+      border-left: 4px solid #a72d3f;
+
+      background: #efe6d7;
+
+      color: #443e36;
+    }
+
+    .intro-image {
+      min-height: 380px;
+
+      background:
+        linear-gradient(
+          rgba(0,0,0,0.08),
+          rgba(0,0,0,0.08)
+        ),
+        url("images/photo1.png") center / cover no-repeat;
+
+      box-shadow: 18px 18px 0 #d6c5aa;
+    }
+
+
+    /* =========================================================
+       SOCIAL
     ========================================================= */
 
     .social {
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
 
-      gap: 20px;
+      gap: 12px;
 
       margin-top: 30px;
     }
 
     .social a {
       display: flex;
+
       align-items: center;
       justify-content: center;
 
-      width: 60px;
-      height: 60px;
+      width: 48px;
+      height: 48px;
 
       overflow: hidden;
 
       border-radius: 50%;
 
-      background: white;
+      background: #29251f;
 
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-
-      transition: 0.3s;
+      transition: transform 0.25s ease;
     }
 
     .social a:hover {
-      transform: translateY(-5px) scale(1.05);
+      transform: translateY(-4px);
     }
 
     .social img {
@@ -382,80 +514,183 @@
 
 
     /* =========================================================
+       PRODUCT SECTION
+    ========================================================= */
+
+    .products-section {
+      margin-top: 80px;
+
+      padding: 70px 50px;
+
+      background: #29251f;
+
+      color: white;
+    }
+
+    .products-section .section-title {
+      color: white;
+    }
+
+    .products-section .section-description {
+      color: rgba(255,255,255,0.7);
+    }
+
+    .products-grid {
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+
+      gap: 2px;
+
+      margin-top: 40px;
+    }
+
+    .product-card {
+      position: relative;
+
+      min-height: 245px;
+
+      padding: 28px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      background: #403a32;
+
+      overflow: hidden;
+
+      transition: transform 0.3s ease;
+    }
+
+    .product-card::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          to top,
+          rgba(0,0,0,0.75),
+          rgba(0,0,0,0.05)
+        );
+    }
+
+    .product-card:nth-child(1) {
+      background:
+        url("images/photo1.png") center / cover;
+    }
+
+    .product-card:nth-child(2) {
+      background:
+        linear-gradient(rgba(100,30,40,0.25),rgba(0,0,0,0.2)),
+        url("images/photo1.png") center / cover;
+    }
+
+    .product-card:nth-child(3) {
+      background:
+        linear-gradient(rgba(50,70,35,0.25),rgba(0,0,0,0.2)),
+        url("images/photo1.png") center / cover;
+    }
+
+    .product-card:nth-child(4) {
+      background:
+        linear-gradient(rgba(80,55,20,0.25),rgba(0,0,0,0.2)),
+        url("images/photo1.png") center / cover;
+    }
+
+    .product-card:hover {
+      transform: translateY(-7px);
+    }
+
+    .product-card-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .product-number {
+      display: block;
+
+      margin-bottom: 10px;
+
+      color: #e3bd68;
+
+      font-size: 0.75rem;
+      font-weight: bold;
+
+      letter-spacing: 2px;
+    }
+
+    .product-card h3 {
+      margin: 0;
+
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 1.45rem;
+    }
+
+    .product-card p {
+      margin: 8px 0 0;
+
+      color: rgba(255,255,255,0.78);
+
+      font-size: 0.9rem;
+    }
+
+
+    /* =========================================================
        SLIDESHOW
     ========================================================= */
 
+    .gallery {
+      margin-top: 80px;
+    }
+
     .slideshow-wrapper {
+      position: relative;
+
+      overflow: hidden;
+
       margin-top: 35px;
 
-      text-align: center;
+      background: #29251f;
+
+      box-shadow: 15px 15px 0 #d6c5aa;
     }
 
     #slideshow {
       display: block;
 
       width: 100%;
-      max-width: 900px;
 
-      height: 500px;
-
-      margin: 0 auto;
+      height: 560px;
 
       object-fit: cover;
 
-      border-radius: 20px;
-
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+      opacity: 1;
 
       transition:
-        opacity 0.5s,
-        transform 0.5s;
+        opacity 0.5s ease,
+        transform 0.5s ease;
     }
 
-    #slideshow:hover {
-      transform: scale(1.01);
-    }
+    .gallery-label {
+      position: absolute;
 
+      left: 25px;
+      bottom: 20px;
 
-    /* =========================================================
-       PRODUCTS
-    ========================================================= */
+      z-index: 3;
 
-    .products-grid {
-      display: grid;
+      padding: 9px 15px;
 
-      grid-template-columns: repeat(
-        auto-fit,
-        minmax(240px, 1fr)
-      );
+      background: rgba(41,37,31,0.85);
 
-      gap: 20px;
+      color: white;
 
-      margin-top: 25px;
-    }
-
-    .product-card {
-      padding: 25px;
-
-      background: #f8fbff;
-
-      border: 1px solid #e6eef8;
-
-      border-radius: 16px;
-
-      transition: 0.3s;
-    }
-
-    .product-card:hover {
-      transform: translateY(-5px);
-
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
-    }
-
-    .product-card h4 {
-      margin-top: 0;
-
-      color: #005dbb;
+      font-size: 0.85rem;
+      font-weight: bold;
     }
 
 
@@ -463,8 +698,43 @@
        HOURS
     ========================================================= */
 
-    .hours {
-      font-size: 1.1rem;
+    .hours-section {
+      margin-top: 80px;
+
+      padding: 55px;
+
+      background: #efe6d7;
+
+      border-top: 4px solid #a72d3f;
+    }
+
+    .hours-content {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 50px;
+    }
+
+    .hours-list {
+      margin: 0;
+      padding: 0;
+
+      list-style: none;
+    }
+
+    .hours-list li {
+      display: flex;
+
+      justify-content: space-between;
+
+      padding: 13px 0;
+
+      border-bottom: 1px solid rgba(41,37,31,0.15);
+    }
+
+    .hours-list strong {
+      color: #a72d3f;
     }
 
 
@@ -472,57 +742,63 @@
        CONTACT
     ========================================================= */
 
+    .contact-section {
+      margin-top: 80px;
+    }
+
     .contact-grid {
       display: grid;
 
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 0.85fr 1.15fr;
 
-      gap: 30px;
+      gap: 40px;
 
-      margin-top: 25px;
+      margin-top: 35px;
     }
 
     .contact-box {
-      padding: 25px;
+      padding: 35px;
 
-      background: #f8fbff;
+      background: #29251f;
 
-      border-radius: 16px;
+      color: white;
     }
 
-    .contact-box p {
-      margin: 0 0 14px;
+    .contact-item {
+      margin-bottom: 25px;
     }
 
-    /*
-     * Contact links
-     */
-    .contact-link {
-      display: inline-block;
+    .contact-item-label {
+      display: block;
 
-      color: #005dbb;
+      margin-bottom: 4px;
 
+      color: #e3bd68;
+
+      font-size: 0.75rem;
       font-weight: bold;
 
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .contact-link {
+      color: white;
+
       text-decoration: none;
+
+      font-size: 1.05rem;
     }
 
     .contact-link:hover {
-      text-decoration: underline;
+      color: #e3bd68;
     }
-
-
-    /* =========================================================
-       MAP
-    ========================================================= */
 
     .map {
       width: 100%;
-      min-height: 350px;
+      min-height: 430px;
 
       border: 0;
-
-      border-radius: 18px;
     }
 
 
@@ -531,38 +807,72 @@
     ========================================================= */
 
     .cta {
-      margin-top: 30px;
-      padding: 45px 30px;
+      position: relative;
+
+      margin-top: 70px;
+
+      padding: 70px 35px;
 
       background:
         linear-gradient(
           135deg,
-          rgba(40, 129, 255, 0.55),
-          rgba(39, 56, 244, 0.55)
+          #a72d3f,
+          #71202d
         );
 
       color: white;
 
       text-align: center;
 
-      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .cta::before {
+      content: "✦";
+
+      position: absolute;
+
+      top: -40px;
+      right: 40px;
+
+      color: rgba(255,255,255,0.08);
+
+      font-size: 180px;
     }
 
     .cta h2 {
-      margin-top: 0;
+      position: relative;
 
-      font-size: 2rem;
+      margin: 0;
+
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: clamp(2rem, 4vw, 3rem);
     }
 
     .cta p {
-      max-width: 700px;
+      position: relative;
 
-      margin: auto;
+      max-width: 650px;
+
+      margin: 18px auto 0;
+
+      color: rgba(255,255,255,0.85);
+    }
+
+    .cta .btn {
+      position: relative;
+
+      margin-top: 28px;
+
+      background: #e3bd68;
+
+      color: #29251f;
     }
 
 
     /* =========================================================
-       RETURN BUTTON
+       RETURN
     ========================================================= */
 
     .return {
@@ -572,12 +882,19 @@
     }
 
     .return .btn {
-      background: #edf3fb;
-      color: #0d2b52;
+      background: transparent;
+
+      border: 1px solid #b9ad9c;
+
+      color: #554f47;
     }
 
     .return .btn:hover {
-      background: #dce7f6;
+      background: #29251f;
+
+      border-color: #29251f;
+
+      color: white;
     }
 
 
@@ -586,58 +903,119 @@
     ========================================================= */
 
     footer {
-      margin-top: 40px;
-      padding: 25px;
+      margin-top: 80px;
 
-      background: #0d2b52;
+      padding: 35px 20px;
 
-      color: white;
+      background: #1d1a17;
+
+      color: rgba(255,255,255,0.65);
 
       text-align: center;
     }
 
+    footer strong {
+      color: #e3bd68;
+    }
+
 
     /* =========================================================
-       TABLET / MOBILE
+       TABLET
     ========================================================= */
 
-    @media (max-width: 850px) {
+    @media (max-width: 950px) {
 
-      /*
-       * IMPORTANT:
-       * Give the hero enough vertical space for:
-       * - menu button
-       * - navigation
-       * - title
-       * - text
-       * - action buttons
-       */
       .hero {
-        min-height: 620px;
+        min-height: 650px;
+      }
 
-        padding: 130px 20px 70px;
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .intro {
+        grid-template-columns: 1fr;
+      }
+
+      .intro-image {
+        min-height: 320px;
+      }
+
+      .hours-content {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .opening-inner {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+
+        text-align: center;
+      }
+
+      .opening-item {
+        justify-content: center;
+      }
+
+      .opening-center {
+        padding: 12px 0;
+
+        border-top: 1px solid rgba(255,255,255,0.15);
+        border-bottom: 1px solid rgba(255,255,255,0.15);
+
+        border-left: 0;
+        border-right: 0;
+      }
+
+    }
+
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+    @media (max-width: 700px) {
+
+      .hero {
+        min-height: 680px;
+
+        padding: 120px 20px 80px;
+
+        background:
+          linear-gradient(
+            rgba(25,20,16,0.78),
+            rgba(25,20,16,0.72)
+          ),
+          url("images/photo1.png") center / cover no-repeat;
       }
 
       .hero-content {
-        padding: 20px 10px;
+        text-align: center;
+      }
+
+      .hero-label {
+        justify-content: center;
       }
 
       .hero h1 {
-        font-size: 2.3rem;
+        font-size: 3.1rem;
+
+        letter-spacing: -1px;
       }
 
-      .hero p {
+      .hero-description {
         font-size: 1.05rem;
       }
 
-      /*
-       * Make buttons stack on smaller screens.
-       */
       .hero-buttons {
         flex-direction: column;
 
         width: 100%;
-        max-width: 320px;
+        max-width: 310px;
 
         margin: 30px auto 0;
       }
@@ -647,9 +1025,7 @@
       }
 
 
-      /* -------------------------
-         MOBILE MENU
-      ------------------------- */
+      /* Mobile navigation */
 
       .menu-toggle {
         display: flex;
@@ -661,26 +1037,23 @@
       .top-nav {
         display: none;
 
-        top: 85px;
-        right: 20px;
+        top: 80px;
         left: auto;
+        right: 18px;
 
-        width: auto;
+        width: 230px;
 
-        transform: none;
+        padding: 12px;
 
         flex-direction: column;
+
         align-items: stretch;
 
-        gap: 10px;
+        background: rgba(29,26,23,0.97);
 
-        padding: 15px;
+        border: 1px solid rgba(255,255,255,0.12);
 
-        background: rgba(0, 0, 0, 0.9);
-
-        border-radius: 18px;
-
-        backdrop-filter: blur(8px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.3);
       }
 
       .top-nav.show {
@@ -688,67 +1061,113 @@
       }
 
       .top-nav a {
-        width: 200px;
-
-        padding: 12px 16px;
+        padding: 13px 15px;
 
         text-align: center;
       }
 
-
-      /* -------------------------
-         IMPORTANT MOBILE FIX
-      ------------------------- */
-
-      /*
-       * On desktop the cards overlap the hero using
-       * margin-top:-90px.
-       *
-       * On mobile this could visually cover the hero
-       * buttons. Therefore we remove the overlap.
-       */
-      .info-grid {
-        margin-top: 20px;
+      .top-nav a::after {
+        display: none;
       }
 
 
-      /* -------------------------
-         MAIN SECTIONS
-      ------------------------- */
+      /* Main */
 
       .container {
-        padding: 25px 15px;
+        padding: 55px 15px;
       }
 
-      .section {
-        padding: 25px 20px;
+      .opening-bar {
+        margin-top: -25px;
       }
 
-      .section-title {
-        font-size: 1.7rem;
+      .opening-inner {
+        padding: 18px 15px;
+      }
+
+      .intro {
+        gap: 35px;
+      }
+
+      .intro-image {
+        min-height: 270px;
+
+        box-shadow: 10px 10px 0 #d6c5aa;
       }
 
 
-      /* -------------------------
-         CONTACT
-      ------------------------- */
+      /* Products */
 
-      .contact-grid {
+      .products-section {
+        margin-top: 55px;
+
+        padding: 45px 20px;
+      }
+
+      .products-grid {
         grid-template-columns: 1fr;
       }
 
-      .map {
-        min-height: 300px;
+      .product-card {
+        min-height: 220px;
       }
 
 
-      /* -------------------------
-         SLIDESHOW
-      ------------------------- */
+      /* Gallery */
+
+      .gallery {
+        margin-top: 55px;
+      }
 
       #slideshow {
         height: 300px;
       }
+
+      .slideshow-wrapper {
+        box-shadow: 8px 8px 0 #d6c5aa;
+      }
+
+
+      /* Hours */
+
+      .hours-section {
+        margin-top: 55px;
+
+        padding: 35px 22px;
+      }
+
+
+      /* Contact */
+
+      .contact-section {
+        margin-top: 55px;
+      }
+
+      .contact-box {
+        padding: 28px 22px;
+      }
+
+      .map {
+        min-height: 330px;
+      }
+
+
+      /* CTA */
+
+      .cta {
+        margin-top: 50px;
+
+        padding: 50px 22px;
+      }
+
+      .cta::before {
+        right: -30px;
+      }
+
+      footer {
+        margin-top: 55px;
+      }
+
     }
 
 
@@ -756,53 +1175,28 @@
        SMALL PHONES
     ========================================================= */
 
-    @media (max-width: 480px) {
-
-      .hero {
-        min-height: 650px;
-
-        padding-top: 125px;
-      }
+    @media (max-width: 430px) {
 
       .hero h1 {
+        font-size: 2.6rem;
+      }
+
+      .hero-label {
+        font-size: 0.7rem;
+      }
+
+      .opening-item {
+        font-size: 0.85rem;
+      }
+
+      .section-title {
         font-size: 2rem;
       }
 
-      .hero p {
-        font-size: 1rem;
+      .hours-list li {
+        font-size: 0.9rem;
       }
 
-      .hero-buttons {
-        max-width: 280px;
-      }
-
-      .top-nav {
-        right: 15px;
-      }
-
-      .top-nav a {
-        width: 180px;
-      }
-
-      .info-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .section {
-        padding: 22px 16px;
-      }
-
-      #slideshow {
-        height: 240px;
-      }
-
-      .cta {
-        padding: 35px 20px;
-      }
-
-      .cta h2 {
-        font-size: 1.6rem;
-      }
     }
 
   </style>
@@ -812,13 +1206,12 @@
 <body>
 
 
-  <!-- =======================================================
+  <!-- =========================================================
        HERO
-  ======================================================== -->
+  ========================================================= -->
 
   <section class="hero">
 
-    <!-- Mobile menu button -->
     <button
       class="menu-toggle"
       id="menuToggle"
@@ -830,42 +1223,40 @@
     </button>
 
 
-    <!-- Navigation -->
     <nav class="top-nav" id="topNav">
 
-      <a href="#apropos">
-        À propos
-      </a>
+      <a href="#apropos">À propos</a>
 
-      <a href="#produits">
-        Produits
-      </a>
+      <a href="#produits">Produits</a>
 
-      <a href="#horaires">
-        Horaires
-      </a>
+      <a href="#galerie">Galerie</a>
 
-      <a href="#contact">
-        Contact
-      </a>
+      <a href="#horaires">Horaires</a>
+
+      <a href="#contact">Contact</a>
 
     </nav>
 
 
-    <!-- Hero content -->
     <div class="hero-content">
 
+      <span class="hero-label">
+        Épicerie spécialisée • Toulouse
+      </span>
+
       <h1>
-        Mixt Market City
+        Les saveurs<br>
+        <span>de l'Est</span>
+        chez vous.
       </h1>
 
-      <p>
-        Votre épicerie spécialisée en produits
-        d’Europe de l’Est à Toulouse.
+      <p class="hero-description">
+        Bienvenue chez <strong>Mixt Market City</strong>,
+        votre épicerie spécialisée en produits
+        d'Europe de l'Est à Toulouse.
       </p>
 
 
-      <!-- Main action buttons -->
       <div class="hero-buttons">
 
         <a
@@ -892,160 +1283,286 @@
 
 
 
-  <!-- =======================================================
-       MAIN
-  ======================================================== -->
+  <!-- =========================================================
+       OPENING BAR
+  ========================================================= -->
 
-  <main class="container">
+  <div class="opening-bar">
 
+    <div class="opening-inner">
 
-    <!-- =====================================================
-         INFO CARDS
-    ====================================================== -->
-
-    <div class="info-grid">
-
-      <div class="info-card">
-
-        <div class="info-card-icon">
-          🥟
-        </div>
-
-        <h3>
-          Produits authentiques
-        </h3>
-
-        <p>
-          Une large sélection de spécialités
-          d’Europe de l’Est.
-        </p>
-
+      <div class="opening-item">
+        🕘
+        <span>
+          <strong>Ouvert 7j/7</strong><br>
+          9h00 – 20h00
+        </span>
       </div>
 
-
-      <div class="info-card">
-
-        <div class="info-card-icon">
-          🛒
-        </div>
-
-        <h3>
-          Produits frais
-        </h3>
-
-        <p>
-          Produits frais, surgelés et artisanaux
-          chaque semaine.
-        </p>
-
+      <div class="opening-center">
+        Une épicerie aux saveurs authentiques
       </div>
 
-
-      <div class="info-card">
-
-        <div class="info-card-icon">
-          📍
-        </div>
-
-        <h3>
-          Situé à Toulouse
-        </h3>
-
-        <p>
-          Facile d’accès avec parking et accueil
-          chaleureux.
-        </p>
-
+      <div class="opening-item">
+        📍
+        <span>
+          <strong>Toulouse</strong><br>
+          109 Av. des États-Unis
+        </span>
       </div>
 
     </div>
 
+  </div>
 
 
-    <!-- =====================================================
+
+  <!-- =========================================================
+       MAIN
+  ========================================================= -->
+
+  <main class="container">
+
+
+    <!-- =======================================================
          ABOUT
-    ====================================================== -->
+    ======================================================== -->
+
+    <section id="apropos">
+
+      <div class="intro">
+
+        <div class="intro-text">
+
+          <div class="section-header">
+
+            <span class="section-kicker">
+              Notre histoire
+            </span>
+
+            <h2 class="section-title">
+              Retrouvez le goût des traditions
+            </h2>
+
+          </div>
+
+
+          <p>
+            Bienvenue chez <strong>Mixt Market City</strong>,
+            votre destination à Toulouse pour découvrir
+            les saveurs traditionnelles d'Europe de l'Est.
+          </p>
+
+          <p>
+            Nous sélectionnons des produits authentiques
+            pour vous permettre de retrouver les goûts,
+            recettes et spécialités qui font la richesse
+            de cette cuisine.
+          </p>
+
+          <div class="intro-highlight">
+            🛒 Produits frais, spécialités traditionnelles,
+            produits surgelés, boissons, confiseries
+            et bien plus encore.
+          </div>
+
+
+          <div class="social">
+
+            <a
+              href="https://www.facebook.com/epicerierussee"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <img src="logo/fb.jpeg" alt="Facebook">
+            </a>
+
+            <a
+              href="https://www.instagram.com/mixt.market_toulouse/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <img src="logo/insta.jpeg" alt="Instagram">
+            </a>
+
+            <a
+              href="https://www.tiktok.com/@mixt.market_toulouse"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="TikTok"
+            >
+              <img src="logo/tik.png" alt="TikTok">
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="intro-image"
+          aria-label="Produits Mixt Market City"
+        ></div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================================
+         PRODUCTS
+    ======================================================== -->
 
     <section
-      class="section"
-      id="apropos"
+      class="products-section"
+      id="produits"
     >
 
-      <h2 class="section-title">
-        À propos de nous
-      </h2>
+      <div class="section-header">
 
+        <span class="section-kicker">
+          À découvrir
+        </span>
 
-      <div class="about">
+        <h2 class="section-title">
+          Nos spécialités
+        </h2>
 
-        <p>
-          Bienvenue chez <strong>Mixt Market City</strong>,
-          votre destination incontournable pour retrouver
-          les saveurs traditionnelles d’Europe de l’Est
-          à Toulouse.
-        </p>
-
-        <p>
-          Nous proposons une sélection de produits
-          authentiques : charcuterie, produits frais,
-          conserves, confiseries, boissons traditionnelles
-          et spécialités artisanales.
-        </p>
-
-        <p>
-          Notre équipe vous accueille chaque jour dans
-          une ambiance conviviale avec des produits
-          soigneusement sélectionnés pour leur qualité.
+        <p class="section-description">
+          Une sélection de produits pour retrouver
+          les saveurs authentiques de l'Europe de l'Est.
         </p>
 
       </div>
 
 
-      <!-- Social networks -->
-      <div class="social">
-
-        <a
-          href="https://www.facebook.com/epicerierussee"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Facebook"
-        >
-          <img
-            src="logo/fb.jpeg"
-            alt="Facebook"
-          >
-        </a>
+      <div class="products-grid">
 
 
-        <a
-          href="https://www.instagram.com/mixt.market_toulouse/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Instagram"
-        >
-          <img
-            src="logo/insta.jpeg"
-            alt="Instagram"
-          >
-        </a>
+        <article class="product-card">
+
+          <div class="product-card-content">
+
+            <span class="product-number">
+              01
+            </span>
+
+            <h3>
+              Produits frais
+            </h3>
+
+            <p>
+              Produits laitiers, viandes,
+              charcuteries et spécialités.
+            </p>
+
+          </div>
+
+        </article>
 
 
-        <a
-          href="https://www.tiktok.com/@mixt.market_toulouse"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="TikTok"
-        >
-          <img
-            src="logo/tik.png"
-            alt="TikTok"
-          >
-        </a>
+        <article class="product-card">
+
+          <div class="product-card-content">
+
+            <span class="product-number">
+              02
+            </span>
+
+            <h3>
+              Épicerie
+            </h3>
+
+            <p>
+              Biscuits, chocolats, snacks,
+              conserves et spécialités.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="product-card">
+
+          <div class="product-card-content">
+
+            <span class="product-number">
+              03
+            </span>
+
+            <h3>
+              Boissons
+            </h3>
+
+            <p>
+              Jus, sodas et boissons
+              aux saveurs traditionnelles.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="product-card">
+
+          <div class="product-card-content">
+
+            <span class="product-number">
+              04
+            </span>
+
+            <h3>
+              Surgelés
+            </h3>
+
+            <p>
+              Pelmeni, vareniki et autres
+              spécialités d'Europe de l'Est.
+            </p>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================================
+         GALLERY
+    ======================================================== -->
+
+    <section
+      class="gallery"
+      id="galerie"
+    >
+
+      <div class="section-header">
+
+        <span class="section-kicker">
+          Notre univers
+        </span>
+
+        <h2 class="section-title">
+          Découvrez notre sélection
+        </h2>
+
+        <p class="section-description">
+          Découvrez en images quelques-uns des produits
+          et spécialités disponibles chez Mixt Market City.
+        </p>
 
       </div>
 
 
-      <!-- Slideshow -->
       <div class="slideshow-wrapper">
 
         <img
@@ -1054,82 +1571,9 @@
           alt="Produits Mixt Market City"
         >
 
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         PRODUCTS
-    ====================================================== -->
-
-    <section
-      class="section"
-      id="produits"
-    >
-
-      <h2 class="section-title">
-        Nos produits
-      </h2>
-
-
-      <div class="products-grid">
-
-        <div class="product-card">
-
-          <h4>
-            Produits frais
-          </h4>
-
-          <p>
-            Produits laitiers, viandes,
-            charcuteries et spécialités maison.
-          </p>
-
-        </div>
-
-
-        <div class="product-card">
-
-          <h4>
-            Épicerie sucrée & salée
-          </h4>
-
-          <p>
-            Snacks, chocolats, biscuits et
-            produits traditionnels.
-          </p>
-
-        </div>
-
-
-        <div class="product-card">
-
-          <h4>
-            Boissons traditionnelles
-          </h4>
-
-          <p>
-            Jus, sodas, boissons artisanales
-            et saveurs typiques.
-          </p>
-
-        </div>
-
-
-        <div class="product-card">
-
-          <h4>
-            Produits surgelés
-          </h4>
-
-          <p>
-            Pelmeni, vareniki et autres
-            spécialités d’Europe de l’Est.
-          </p>
-
-        </div>
+        <span class="gallery-label">
+          Mixt Market City • Toulouse
+        </span>
 
       </div>
 
@@ -1137,49 +1581,117 @@
 
 
 
-    <!-- =====================================================
+    <!-- =======================================================
          HOURS
-    ====================================================== -->
+    ======================================================== -->
 
     <section
-      class="section"
+      class="hours-section"
       id="horaires"
     >
 
-      <h2 class="section-title">
-        Horaires
-      </h2>
+      <div class="hours-content">
 
-      <p class="hours">
-        🕘 Ouvert 7j/7 : 9h00 – 20h00
-      </p>
+        <div>
+
+          <span class="section-kicker">
+            Quand nous trouver
+          </span>
+
+          <h2 class="section-title">
+            Horaires d'ouverture
+          </h2>
+
+          <p>
+            Nous vous accueillons toute la semaine
+            pour vous faire découvrir nos produits.
+          </p>
+
+        </div>
+
+
+        <ul class="hours-list">
+
+          <li>
+            <span>Lundi</span>
+            <strong>9h00 – 20h00</strong>
+          </li>
+
+          <li>
+            <span>Mardi</span>
+            <strong>9h00 – 20h00</strong>
+          </li>
+
+          <li>
+            <span>Mercredi</span>
+            <strong>9h00 – 20h00</strong>
+          </li>
+
+          <li>
+            <span>Jeudi</span>
+            <strong>9h00 – 20h00</strong>
+          </li>
+
+          <li>
+            <span>Vendredi</span>
+            <strong>9h00 – 20h00</strong>
+          </li>
+
+          <li>
+            <span>Samedi</span>
+            <strong>9h00 – 20h00</strong>
+          </li>
+
+          <li>
+            <span>Dimanche</span>
+            <strong>9h00 – 20h00</strong>
+          </li>
+
+        </ul>
+
+      </div>
 
     </section>
 
 
 
-    <!-- =====================================================
+    <!-- =======================================================
          CONTACT
-    ====================================================== -->
+    ======================================================== -->
 
     <section
-      class="section"
+      class="contact-section"
       id="contact"
     >
 
-      <h2 class="section-title">
-        Contact & localisation
-      </h2>
+      <div class="section-header">
+
+        <span class="section-kicker">
+          Venez nous voir
+        </span>
+
+        <h2 class="section-title">
+          Où nous trouver ?
+        </h2>
+
+        <p class="section-description">
+          Retrouvez-nous facilement à Toulouse,
+          au 109 Avenue des États-Unis.
+        </p>
+
+      </div>
 
 
       <div class="contact-grid">
 
 
-        <!-- Contact information -->
         <div class="contact-box">
 
-          <p>
-            📍
+          <div class="contact-item">
+
+            <span class="contact-item-label">
+              Adresse
+            </span>
 
             <a
               class="contact-link"
@@ -1187,14 +1699,18 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              109 Av. des États-Unis,
+              109 Av. des États-Unis<br>
               31200 Toulouse
             </a>
-          </p>
+
+          </div>
 
 
-          <p>
-            📞
+          <div class="contact-item">
+
+            <span class="contact-item-label">
+              Téléphone
+            </span>
 
             <a
               class="contact-link"
@@ -1202,11 +1718,8 @@
             >
               09 53 61 37 53
             </a>
-          </p>
 
-
-          <p>
-            📞
+            <br>
 
             <a
               class="contact-link"
@@ -1214,11 +1727,15 @@
             >
               05 64 72 19 79
             </a>
-          </p>
+
+          </div>
 
 
-          <p>
-            ✉️
+          <div class="contact-item">
+
+            <span class="contact-item-label">
+              Email
+            </span>
 
             <a
               class="contact-link"
@@ -1226,88 +1743,121 @@
             >
               contact@mixtmarketcity.fr
             </a>
-          </p>
+
+          </div>
 
 
           <p>
-            Nous vous accueillons tous les jours avec
-            des produits authentiques et une équipe
-            à votre écoute.
+            Une question sur un produit ?
+            N'hésitez pas à nous contacter.
+            Notre équipe sera heureuse de vous renseigner.
           </p>
+
+
+          <a
+            class="btn btn-primary"
+            href="https://www.google.com/maps/dir/?api=1&destination=109+Av.+des+États-Unis,+31200+Toulouse"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            📍 Itinéraire
+          </a>
 
         </div>
 
 
-        <!-- Google Maps -->
         <iframe
           class="map"
           src="https://www.google.com/maps?q=Mixt+Market+City+Toulouse&output=embed"
           loading="lazy"
           title="Localisation de Mixt Market City"
           referrerpolicy="no-referrer-when-downgrade"
-        >
-        </iframe>
+        ></iframe>
 
-      </div>
-
-
-      <!-- CTA -->
-      <div class="cta">
-
-        <h2>
-          Découvrez les saveurs de l’Europe de l’Est
-        </h2>
-
-        <p>
-          Venez découvrir des produits authentiques,
-          des nouveautés chaque semaine et une ambiance
-          conviviale au cœur de Toulouse.
-        </p>
-
-      </div>
-
-
-      <!-- Return button -->
-      <div class="return">
-
-        <a
-          class="btn"
-          href="../index.html"
-        >
-          ⬅ Retour à l’accueil
-        </a>
 
       </div>
 
     </section>
 
+
+
+    <!-- =======================================================
+         CTA
+    ======================================================== -->
+
+    <section class="cta">
+
+      <h2>
+        Une envie de saveurs authentiques ?
+      </h2>
+
+      <p>
+        Venez découvrir notre sélection de produits
+        d'Europe de l'Est et laissez-vous surprendre
+        par de nouvelles saveurs.
+      </p>
+
+      <a
+        class="btn"
+        href="https://www.google.com/maps/dir/?api=1&destination=109+Av.+des+États-Unis,+31200+Toulouse"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        📍 Venez nous rendre visite
+      </a>
+
+    </section>
+
+
+
+    <!-- =======================================================
+         RETURN
+    ======================================================== -->
+
+    <div class="return">
+
+      <a
+        class="btn"
+        href="../index.html"
+      >
+        ← Retour à l'accueil
+      </a>
+
+    </div>
+
+
   </main>
 
 
 
-  <!-- =======================================================
+  <!-- =========================================================
        FOOTER
-  ======================================================== -->
+  ========================================================= -->
 
   <footer>
 
     <p>
-      © 2026 Mixt Market City • Toulouse
+      <strong>Mixt Market City</strong>
+      • Épicerie spécialisée à Toulouse
+    </p>
+
+    <p>
+      © 2026 Mixt Market City • Tous droits réservés
     </p>
 
   </footer>
 
 
 
-  <!-- =======================================================
+  <!-- =========================================================
        JAVASCRIPT
-  ======================================================== -->
+  ========================================================= -->
 
   <script>
 
-    /* =======================================================
+    /* =========================================================
        IMAGE SLIDESHOW
-    ======================================================== */
+    ========================================================= */
 
     const repoUrl =
       "https://api.github.com/repos/Upcore-Group/demo-sites/contents/grocery-store/images";
@@ -1333,15 +1883,14 @@
       .then(files => {
 
         const images = files
+
           .filter(file =>
             /\.(jpg|jpeg|png|gif|webp)$/i.test(file.name)
           )
+
           .map(file => file.download_url);
 
 
-        /*
-         * Nothing to display.
-         */
         if (images.length === 0) {
           console.warn("No images found.");
           return;
@@ -1353,9 +1902,6 @@
         slideshow.src = images[currentIndex];
 
 
-        /*
-         * Change image every 6 seconds.
-         */
         setInterval(() => {
 
           currentIndex =
@@ -1385,19 +1931,16 @@
           error
         );
 
-        /*
-         * Keep the original image if
-         * the GitHub API is unavailable.
-         */
-        slideshow.src = "images/photo1.png";
+        slideshow.src =
+          "images/photo1.png";
 
       });
 
 
 
-    /* =======================================================
+    /* =========================================================
        MOBILE NAVIGATION
-    ======================================================== */
+    ========================================================= */
 
     const menuToggle =
       document.getElementById("menuToggle");
@@ -1411,7 +1954,6 @@
       const isOpen =
         topNav.classList.toggle("show");
 
-
       menuToggle.setAttribute(
         "aria-expanded",
         isOpen
@@ -1420,25 +1962,25 @@
     });
 
 
-    /*
-     * Close mobile menu after clicking a link.
-     */
-    topNav.querySelectorAll("a").forEach(link => {
+    topNav
+      .querySelectorAll("a")
+      .forEach(link => {
 
-      link.addEventListener("click", () => {
+        link.addEventListener("click", () => {
 
-        topNav.classList.remove("show");
+          topNav.classList.remove("show");
 
-        menuToggle.setAttribute(
-          "aria-expanded",
-          "false"
-        );
+          menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+        });
 
       });
-
-    });
 
   </script>
 
 </body>
 </html>
+```

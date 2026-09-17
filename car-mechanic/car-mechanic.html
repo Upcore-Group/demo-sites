@@ -1,208 +1,1688 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Auto Service Toulouse - Toulouse</title>
-<meta name="description" content="Garage automobile & mécanique à Toulouse. Entretien, diagnostic, réparation et révision de votre véhicule avec un service transparent.">
-<link rel="icon" href="logo/logo.png">
-<link rel="stylesheet" href="../common/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#fff;color:#222;line-height:1.7}
-a{color:inherit}
-.hero{position:relative;min-height:540px;display:flex;align-items:center;justify-content:center;padding:100px 20px 60px;background:linear-gradient(rgba(40,129,255,.55),rgba(39,56,244,.55)),url("images/photo1.jpg") center/cover no-repeat;color:#fff;text-align:center;overflow:hidden}
-.hero-content{position:relative;z-index:2;width:100%;max-width:800px;padding:20px}
-.hero h1{margin:0;font-size:3.2rem;line-height:1.2}
-.hero p{max-width:700px;margin:20px auto 0;font-size:1.2rem}
-.top-nav{position:absolute;top:25px;left:50%;transform:translateX(-50%);z-index:20;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;width:calc(100% - 40px)}
-.top-nav a{padding:10px 18px;border-radius:30px;text-decoration:none;background:rgba(255,255,255,.12);backdrop-filter:blur(5px);font-weight:bold}
-.menu-toggle{display:none;position:absolute;top:20px;right:20px;z-index:30;width:52px;height:52px;border:0;border-radius:14px;background:rgba(255,255,255,.15);color:#fff;font-size:28px;cursor:pointer}
-.hero-buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:15px;margin-top:30px}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:14px 28px;border-radius:50px;text-decoration:none;font-weight:bold}
-.btn-primary{background:#ffcc00;color:#111}
-.btn-secondary{background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3)}
-.container{width:100%;max-width:1200px;margin:auto;padding:40px 20px}
-.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:-90px;position:relative;z-index:5}
-.info-card,.service-card,.contact-box{background:#fff;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.07)}
-.info-card{padding:28px;text-align:center}
-.info-icon{font-size:2rem}
-.info-card h3,.service-card h4{color:#005dbb}
-.section{background:#fff;margin-top:28px;padding:40px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.06)}
-.section-title{font-size:2rem;color:#0d2b52;margin:0 0 18px}
-.about{font-size:1.05rem;color:#444}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:25px}
-.service-card{padding:25px;background:#f8fbff;border:1px solid #e6eef8;box-shadow:none}
-.service-card h4{margin-top:0}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:25px}
-.contact-box{padding:25px;background:#f8fbff;box-shadow:none}
-.contact-box p{margin:0 0 14px}
-.contact-link{color:#005dbb;font-weight:bold;text-decoration:none}
-.contact-link:hover{text-decoration:underline}
-.map{width:100%;min-height:350px;border:0;border-radius:18px}
-.cta{margin-top:30px;padding:45px 30px;background:linear-gradient(135deg,rgba(40,129,255,.55),rgba(39,56,244,.55));color:#fff;text-align:center;border-radius:20px}
-.return{margin-top:35px;text-align:center}
-.return .btn{background:#edf3fb;color:#0d2b52}
-footer{margin-top:40px;background:#0d2b52;color:#fff;text-align:center;padding:25px}
-@media(max-width:850px){
-.hero{min-height:620px;padding:130px 20px 70px}
-.hero h1{font-size:2.3rem}
-.hero p{font-size:1.05rem}
-.hero-buttons{flex-direction:column;width:100%;max-width:320px;margin:30px auto 0}
-.hero-buttons .btn{width:100%}
-.menu-toggle{display:flex;align-items:center;justify-content:center}
-.top-nav{display:none;top:85px;right:20px;left:auto;width:auto;transform:none;flex-direction:column;align-items:stretch;background:rgba(0,0,0,.9);padding:15px;border-radius:18px}
-.top-nav.show{display:flex}
-.top-nav a{width:200px;text-align:center}
-.info-grid{margin-top:20px}
-.section{padding:25px 20px}
-.contact-grid{grid-template-columns:1fr}
-}
-@media(max-width:480px){
-.hero{min-height:650px}
-.hero h1{font-size:2rem}
-.top-nav{right:15px}
-.top-nav a{width:180px}
-.container{padding:25px 15px}
-.section{padding:22px 16px}
-}
-</style>
+  <title>Auto Service Toulouse - Garage automobile</title>
+
+  <meta
+    name="description"
+    content="Garage automobile & mécanique à Toulouse. Entretien, diagnostic, réparation et révision de votre véhicule avec un service transparent."
+  >
+
+  <link rel="icon" href="logo/logo.png">
+  <link rel="stylesheet" href="../common/style.css">
+
+  <style>
+
+    /* =========================================================
+       RESET
+    ========================================================= */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #eef0f2;
+      color: #181a1d;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+    }
+
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      position: relative;
+      min-height: 700px;
+      overflow: hidden;
+
+      display: flex;
+      align-items: center;
+
+      color: #fff;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(8, 9, 11, 0.96) 0%,
+          rgba(8, 9, 11, 0.87) 42%,
+          rgba(8, 9, 11, 0.38) 100%
+        ),
+        url("images/photo1.jpg") center / cover no-repeat;
+    }
+
+    .hero::before {
+      content: "AUTO";
+      position: absolute;
+      right: -50px;
+      bottom: -55px;
+
+      color: rgba(255,255,255,0.035);
+      font-size: 18rem;
+      font-weight: 900;
+      line-height: 1;
+
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+
+      width: 100%;
+      height: 6px;
+
+      background: #e21b2d;
+    }
+
+
+    /* =========================================================
+       NAVIGATION
+    ========================================================= */
+
+    .top-nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      max-width: 1250px;
+      margin: auto;
+      padding: 25px;
+    }
+
+    .logo-text {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      color: #fff;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .logo-symbol {
+      width: 42px;
+      height: 42px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #e21b2d;
+      color: #fff;
+
+      font-size: 1.35rem;
+
+      transform: skew(-10deg);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      position: relative;
+
+      color: rgba(255,255,255,0.82);
+
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+
+      transition: 0.25s;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -7px;
+
+      width: 0;
+      height: 2px;
+
+      background: #e21b2d;
+
+      transition: 0.25s;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .menu-toggle {
+      display: none;
+
+      width: 48px;
+      height: 48px;
+
+      border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(0,0,0,0.35);
+      color: #fff;
+
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+
+    /* =========================================================
+       HERO CONTENT
+    ========================================================= */
+
+    .hero-content {
+      position: relative;
+      z-index: 5;
+
+      width: 100%;
+      max-width: 1250px;
+      margin: auto;
+
+      padding: 130px 25px 90px;
+    }
+
+    .hero-kicker {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      margin-bottom: 20px;
+
+      color: #e21b2d;
+
+      font-size: 0.8rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .hero-kicker::before {
+      content: "";
+      width: 40px;
+      height: 3px;
+
+      background: #e21b2d;
+    }
+
+    .hero h1 {
+      max-width: 800px;
+      margin: 0;
+
+      font-size: clamp(3rem, 7vw, 6.3rem);
+      line-height: 0.94;
+
+      letter-spacing: -4px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 span {
+      display: block;
+      color: #e21b2d;
+    }
+
+    .hero-description {
+      max-width: 650px;
+      margin: 30px 0 0;
+
+      color: rgba(255,255,255,0.72);
+
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+
+      margin-top: 38px;
+    }
+
+
+    /* =========================================================
+       BUTTONS
+    ========================================================= */
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+
+      min-height: 52px;
+      padding: 0 25px;
+
+      font-size: 0.82rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+
+      transition: 0.25s;
+    }
+
+    .btn-primary {
+      background: #e21b2d;
+      color: #fff;
+
+      box-shadow: 0 12px 30px rgba(226,27,45,0.25);
+    }
+
+    .btn-primary:hover {
+      background: #f32c3e;
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.05);
+      color: #fff;
+    }
+
+    .btn-outline:hover {
+      border-color: #e21b2d;
+      background: rgba(226,27,45,0.1);
+    }
+
+
+    /* =========================================================
+       HERO SIDE PANEL
+    ========================================================= */
+
+    .hero-panel {
+      position: absolute;
+      z-index: 5;
+
+      right: 7%;
+      bottom: 65px;
+
+      width: 250px;
+
+      padding: 25px;
+
+      background: rgba(15,16,18,0.88);
+      border-left: 4px solid #e21b2d;
+
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-panel small {
+      display: block;
+
+      color: #999;
+
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .hero-panel strong {
+      display: block;
+      margin-top: 8px;
+
+      color: #fff;
+      font-size: 1.35rem;
+      text-transform: uppercase;
+    }
+
+    .hero-panel span {
+      display: block;
+      margin-top: 5px;
+
+      color: #e21b2d;
+
+      font-size: 0.75rem;
+      font-weight: 800;
+    }
+
+
+    /* =========================================================
+       MAIN CONTAINER
+    ========================================================= */
+
+    .container {
+      width: 100%;
+      max-width: 1250px;
+      margin: auto;
+      padding: 80px 25px;
+    }
+
+
+    /* =========================================================
+       QUICK SERVICES
+    ========================================================= */
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+
+      background: #cfd2d5;
+    }
+
+    .quick-card {
+      position: relative;
+
+      min-height: 170px;
+      padding: 30px;
+
+      background: #fff;
+
+      transition: 0.25s;
+    }
+
+    .quick-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .quick-number {
+      color: #e21b2d;
+
+      font-size: 0.7rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .quick-card h3 {
+      margin: 15px 0 7px;
+
+      font-size: 1.05rem;
+      text-transform: uppercase;
+    }
+
+    .quick-card p {
+      margin: 0;
+
+      color: #666;
+
+      font-size: 0.88rem;
+      line-height: 1.65;
+    }
+
+
+    /* =========================================================
+       SECTION HEADER
+    ========================================================= */
+
+    .section-header {
+      margin-bottom: 45px;
+    }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      margin-bottom: 12px;
+
+      color: #b41425;
+
+      font-size: 0.75rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .section-label::before {
+      content: "";
+
+      width: 32px;
+      height: 3px;
+
+      background: #e21b2d;
+    }
+
+    .section-title {
+      margin: 0;
+
+      color: #16181b;
+
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      line-height: 1.05;
+
+      text-transform: uppercase;
+      letter-spacing: -1.5px;
+    }
+
+    .section-intro {
+      max-width: 700px;
+      margin-top: 18px;
+
+      color: #686b6f;
+
+      line-height: 1.8;
+    }
+
+
+    /* =========================================================
+       ABOUT
+    ========================================================= */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-image {
+      position: relative;
+
+      min-height: 500px;
+      overflow: hidden;
+
+      background: #151719;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 500px;
+
+      display: block;
+
+      object-fit: cover;
+
+      transition: transform 0.7s ease;
+    }
+
+    .about-image:hover img {
+      transform: scale(1.04);
+    }
+
+    .image-tag {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+
+      padding: 16px 22px;
+
+      background: #e21b2d;
+      color: #fff;
+
+      font-size: 0.75rem;
+      font-weight: 900;
+
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .about-content p {
+      color: #555;
+      font-size: 1rem;
+      line-height: 1.85;
+    }
+
+    .about-list {
+      margin: 30px 0 0;
+      padding: 0;
+
+      list-style: none;
+    }
+
+    .about-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      padding: 13px 0;
+
+      border-bottom: 1px solid #ddd;
+
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .about-list li::before {
+      content: "✓";
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 24px;
+      height: 24px;
+
+      flex-shrink: 0;
+
+      background: #e21b2d;
+      color: #fff;
+
+      font-size: 0.75rem;
+      font-weight: 900;
+    }
+
+
+    /* =========================================================
+       SERVICES DARK SECTION
+    ========================================================= */
+
+    .services-section {
+      background: #17191c;
+      color: #fff;
+    }
+
+    .services-section .section-title {
+      color: #fff;
+    }
+
+    .services-section .section-intro {
+      color: rgba(255,255,255,0.58);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+
+      background: #36383b;
+    }
+
+    .service-card {
+      position: relative;
+
+      min-height: 220px;
+      padding: 35px;
+
+      background: #1f2225;
+
+      transition: 0.3s;
+    }
+
+    .service-card:hover {
+      background: #25282b;
+      transform: translateY(-4px);
+    }
+
+    .service-card::before {
+      content: "";
+
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 0;
+      height: 4px;
+
+      background: #e21b2d;
+
+      transition: 0.3s;
+    }
+
+    .service-card:hover::before {
+      width: 100%;
+    }
+
+    .service-number {
+      color: #e21b2d;
+
+      font-size: 0.75rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .service-card h3 {
+      margin: 25px 0 10px;
+
+      color: #fff;
+
+      font-size: 1.15rem;
+      text-transform: uppercase;
+    }
+
+    .service-card p {
+      margin: 0;
+
+      color: rgba(255,255,255,0.55);
+
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+
+    /* =========================================================
+       HORAIRES
+    ========================================================= */
+
+    .hours-section {
+      background: #fff;
+    }
+
+    .hours-box {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 40px;
+
+      padding: 45px;
+
+      border: 1px solid #d9dbdd;
+      border-left: 5px solid #e21b2d;
+
+      background: #f8f9fa;
+    }
+
+    .hours-box h2 {
+      margin: 0 0 10px;
+
+      font-size: 1.8rem;
+      text-transform: uppercase;
+    }
+
+    .hours-box p {
+      margin: 4px 0;
+      color: #666;
+    }
+
+    .hours-status {
+      text-align: right;
+    }
+
+    .status-dot {
+      display: inline-block;
+
+      width: 10px;
+      height: 10px;
+
+      margin-right: 8px;
+
+      background: #2ca34a;
+      border-radius: 50%;
+    }
+
+    .hours-status strong {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+    }
+
+
+    /* =========================================================
+       CONTACT
+    ========================================================= */
+
+    .contact-section {
+      background: #eef0f2;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 25px;
+    }
+
+    .contact-box {
+      padding: 40px;
+
+      background: #fff;
+      border: 1px solid #d9dbdd;
+    }
+
+    .contact-item {
+      padding: 20px 0;
+
+      border-bottom: 1px solid #e2e3e5;
+    }
+
+    .contact-item:first-child {
+      padding-top: 0;
+    }
+
+    .contact-item:last-child {
+      border-bottom: 0;
+    }
+
+    .contact-item small {
+      display: block;
+      margin-bottom: 7px;
+
+      color: #b41425;
+
+      font-size: 0.68rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .contact-item strong,
+    .contact-item a {
+      color: #1a1c1f;
+
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
+
+    .contact-item a {
+      font-weight: 800;
+    }
+
+    .contact-item a:hover {
+      color: #e21b2d;
+    }
+
+    .map {
+      width: 100%;
+      min-height: 430px;
+
+      display: block;
+
+      border: 0;
+    }
+
+
+    /* =========================================================
+       FINAL CTA
+    ========================================================= */
+
+    .cta {
+      position: relative;
+      overflow: hidden;
+
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 40px;
+
+      padding: 55px;
+
+      background: #e21b2d;
+      color: #fff;
+    }
+
+    .cta::after {
+      content: "01";
+
+      position: absolute;
+      right: -20px;
+      bottom: -80px;
+
+      color: rgba(0,0,0,0.08);
+
+      font-size: 16rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta h2 {
+      margin: 0 0 12px;
+
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1;
+
+      text-transform: uppercase;
+      letter-spacing: -1px;
+    }
+
+    .cta p {
+      max-width: 650px;
+      margin: 0;
+
+      color: rgba(255,255,255,0.82);
+      line-height: 1.7;
+    }
+
+    .cta .btn {
+      position: relative;
+      z-index: 3;
+
+      background: #17191c;
+      color: #fff;
+
+      white-space: nowrap;
+    }
+
+    .cta .btn:hover {
+      background: #000;
+      transform: translateY(-3px);
+    }
+
+
+    /* =========================================================
+       RETURN
+    ========================================================= */
+
+    .return {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .return .btn {
+      border: 1px solid #d3d5d7;
+      background: #fff;
+      color: #444;
+    }
+
+    .return .btn:hover {
+      border-color: #e21b2d;
+      color: #e21b2d;
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      padding: 30px 20px;
+
+      background: #101214;
+      color: rgba(255,255,255,0.45);
+
+      text-align: center;
+
+      font-size: 0.8rem;
+    }
+
+    footer strong {
+      color: #fff;
+    }
+
+    footer span {
+      color: #e21b2d;
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 950px) {
+
+      .nav-links {
+        display: none;
+
+        position: absolute;
+        top: 80px;
+        right: 20px;
+
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        padding: 12px;
+
+        background: rgba(10,11,13,0.97);
+        border: 1px solid rgba(255,255,255,0.1);
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links a {
+        width: 200px;
+        padding: 12px 15px;
+      }
+
+      .nav-links a::after {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hero {
+        min-height: 650px;
+      }
+
+      .hero-panel {
+        display: none;
+      }
+
+      .quick-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta {
+        grid-template-columns: 1fr;
+      }
+
+      .hours-box {
+        grid-template-columns: 1fr;
+      }
+
+      .hours-status {
+        text-align: left;
+      }
+    }
+
+
+    @media (max-width: 600px) {
+
+      .hero {
+        min-height: 680px;
+      }
+
+      .hero-content {
+        padding: 130px 20px 70px;
+      }
+
+      .hero h1 {
+        font-size: 3.2rem;
+        letter-spacing: -2px;
+      }
+
+      .hero-description {
+        font-size: 0.98rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-buttons .btn {
+        width: 100%;
+      }
+
+      .container {
+        padding: 55px 18px;
+      }
+
+      .about-image,
+      .about-image img {
+        min-height: 350px;
+      }
+
+      .service-card {
+        min-height: auto;
+        padding: 28px;
+      }
+
+      .hours-box {
+        padding: 30px 25px;
+      }
+
+      .contact-box {
+        padding: 28px 22px;
+      }
+
+      .cta {
+        padding: 38px 25px;
+      }
+
+      .cta .btn {
+        width: 100%;
+      }
+
+      .map {
+        min-height: 330px;
+      }
+    }
+
+  </style>
 </head>
 
 <body>
 
-<section class="hero">
-  <button class="menu-toggle" id="menuToggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+  <!-- =======================================================
+       HERO
+  ======================================================== -->
 
-  <nav class="top-nav" id="topNav">
-    <a href="#apropos">À propos</a>
-    <a href="#services">Services</a>
-    <a href="#horaires">Horaires</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <section class="hero">
 
-  <div class="hero-content">
-    <h1>Auto Service Toulouse</h1>
-    <p>Entretien, diagnostic, réparation et révision de votre véhicule avec un service transparent.</p>
+    <nav class="top-nav">
 
-    <div class="hero-buttons">
-      <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination=Toulouse" target="_blank" rel="noopener noreferrer">📍 Nous trouver</a>
-      <a class="btn btn-secondary" href="tel:+33000000000">📞 Nous appeler</a>
-    </div>
-  </div>
-</section>
+      <a href="#" class="logo-text">
+        <span class="logo-symbol">🚗</span>
+        Auto Service
+      </a>
 
-<main class="container">
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Ouvrir le menu"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        ☰
+      </button>
 
-  <div class="info-grid">
-    
-      <article class="info-card">
-        <div class="info-icon">🔧</div>
-        <h3>Réparation</h3>
-        <p>Interventions mécaniques et réparations du quotidien.</p>
-      </article>
+      <div class="nav-links" id="navLinks">
 
-      <article class="info-card">
-        <div class="info-icon">🛠️</div>
-        <h3>Entretien</h3>
-        <p>Vidange, freins, filtres et entretien courant.</p>
-      </article>
+        <a href="#apropos">À propos</a>
+        <a href="#services">Services</a>
+        <a href="#horaires">Horaires</a>
+        <a href="#contact">Contact</a>
 
-      <article class="info-card">
-        <div class="info-icon">🚗</div>
-        <h3>Diagnostic</h3>
-        <p>Diagnostic électronique et recherche de panne.</p>
-      </article>
-  </div>
-
-  <section class="section" id="apropos">
-    <h2 class="section-title">À propos de nous</h2>
-    <div class="about">
-      <p>Auto Service Toulouse vous accompagne pour l'entretien et la réparation de votre véhicule. Nous privilégions un diagnostic clair et des interventions adaptées à vos besoins.</p>
-      <p>Contactez-nous pour discuter de votre besoin et obtenir une information adaptée à votre projet.</p>
-    </div>
-  </section>
-
-  <section class="section" id="services">
-    <h2 class="section-title">Nos services</h2>
-    <div class="services-grid">
-      
-        <article class="service-card">
-          <h4>Révision</h4>
-          <p>Entretien périodique et contrôle des principaux éléments.</p>
-        </article>
-
-        <article class="service-card">
-          <h4>Freinage</h4>
-          <p>Plaquettes, disques et contrôle du système de freinage.</p>
-        </article>
-
-        <article class="service-card">
-          <h4>Diagnostic</h4>
-          <p>Lecture des défauts et recherche de panne.</p>
-        </article>
-
-        <article class="service-card">
-          <h4>Pneus</h4>
-          <p>Montage, équilibrage et contrôle de l'état des pneus.</p>
-        </article>
-    </div>
-  </section>
-
-  <section class="section" id="horaires">
-    <h2 class="section-title">Horaires</h2>
-    <p>🕘 Ouvert du lundi au samedi : 9h00 – 19h00</p>
-    <p>📅 Sur rendez-vous selon disponibilité.</p>
-  </section>
-
-  <section class="section" id="contact">
-    <h2 class="section-title">Contact & localisation</h2>
-
-    <div class="contact-grid">
-      <div class="contact-box">
-        <p>📍 <a class="contact-link" href="https://www.google.com/maps/dir/?api=1&destination=Toulouse" target="_blank" rel="noopener noreferrer">Toulouse, France</a></p>
-        <p>📞 <a class="contact-link" href="tel:+33000000000">06 00 00 00 00</a></p>
-        <p>✉️ <a class="contact-link" href="mailto:contact@example.fr">contact@example.fr</a></p>
-        <p>Nous sommes à votre écoute pour répondre à vos questions et préparer votre rendez-vous.</p>
       </div>
 
-      <iframe class="map" src="https://www.google.com/maps?q=Toulouse&output=embed" loading="lazy" title="Localisation à Toulouse"></iframe>
+    </nav>
+
+
+    <div class="hero-content">
+
+      <div class="hero-kicker">
+        Garage automobile • Toulouse
+      </div>
+
+      <h1>
+        Votre voiture.
+        <span>Notre expertise.</span>
+      </h1>
+
+      <p class="hero-description">
+        Entretien, diagnostic, réparation et révision de votre véhicule
+        avec une approche simple, transparente et professionnelle.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a
+          class="btn btn-primary"
+          href="https://www.google.com/maps/dir/?api=1&destination=Toulouse"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          📍 Nous trouver
+        </a>
+
+        <a
+          class="btn btn-outline"
+          href="tel:+33000000000"
+        >
+          📞 Nous appeler
+        </a>
+
+      </div>
+
     </div>
 
-    <div class="cta">
-      <h2>Votre voiture mérite un entretien sérieux.</h2>
-      <p>Contactez-nous pour échanger sur votre besoin et trouver la formule qui vous convient.</p>
+
+    <div class="hero-panel">
+
+      <small>Service automobile</small>
+
+      <strong>
+        Toulouse
+      </strong>
+
+      <span>
+        Entretien • Diagnostic • Réparation
+      </span>
+
     </div>
 
-    <div class="return">
-      <a class="btn" href="../index.html">⬅ Retour à l’accueil</a>
-    </div>
   </section>
 
-</main>
 
-<footer>
-  <p>© 2026 Auto Service Toulouse • Toulouse</p>
-</footer>
+  <!-- =======================================================
+       MAIN
+  ======================================================== -->
 
-<script>
-const menuToggle = document.getElementById("menuToggle");
-const topNav = document.getElementById("topNav");
+  <main>
 
-menuToggle.addEventListener("click", () => {
-  const isOpen = topNav.classList.toggle("show");
-  menuToggle.setAttribute("aria-expanded", isOpen);
-});
 
-topNav.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
-    topNav.classList.remove("show");
-    menuToggle.setAttribute("aria-expanded", "false");
-  });
-});
-</script>
+    <!-- =====================================================
+         QUICK SERVICES
+    ====================================================== -->
+
+    <div class="container">
+
+      <div class="quick-grid">
+
+        <article class="quick-card">
+
+          <div class="quick-number">
+            01 / RÉPARATION
+          </div>
+
+          <h3>
+            Réparation
+          </h3>
+
+          <p>
+            Interventions mécaniques et réparations du quotidien
+            pour votre véhicule.
+          </p>
+
+        </article>
+
+
+        <article class="quick-card">
+
+          <div class="quick-number">
+            02 / ENTRETIEN
+          </div>
+
+          <h3>
+            Entretien
+          </h3>
+
+          <p>
+            Vidange, freins, filtres et entretien courant
+            de votre automobile.
+          </p>
+
+        </article>
+
+
+        <article class="quick-card">
+
+          <div class="quick-number">
+            03 / DIAGNOSTIC
+          </div>
+
+          <h3>
+            Diagnostic
+          </h3>
+
+          <p>
+            Recherche de panne et diagnostic électronique
+            de votre véhicule.
+          </p>
+
+        </article>
+
+      </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         ABOUT
+    ====================================================== -->
+
+    <section id="apropos">
+
+      <div class="container">
+
+        <div class="about-grid">
+
+          <div class="about-image">
+
+            <img
+              src="images/photo1.jpg"
+              alt="Garage automobile Auto Service Toulouse"
+              loading="lazy"
+            >
+
+            <div class="image-tag">
+              Auto Service Toulouse
+            </div>
+
+          </div>
+
+
+          <div class="about-content">
+
+            <div class="section-header">
+
+              <div class="section-label">
+                À propos
+              </div>
+
+              <h2 class="section-title">
+                Une mécanique claire.<br>
+                Un service transparent.
+              </h2>
+
+            </div>
+
+            <p>
+              Auto Service Toulouse vous accompagne pour l'entretien
+              et la réparation de votre véhicule avec une approche
+              simple et professionnelle.
+            </p>
+
+            <p>
+              Notre objectif est de vous apporter un diagnostic clair
+              et des interventions adaptées à votre véhicule et à vos besoins.
+            </p>
+
+            <ul class="about-list">
+
+              <li>
+                Diagnostic avant intervention
+              </li>
+
+              <li>
+                Entretien courant et révision
+              </li>
+
+              <li>
+                Réparations mécaniques
+              </li>
+
+              <li>
+                Conseils adaptés à votre véhicule
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SERVICES
+    ====================================================== -->
+
+    <section class="services-section" id="services">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div class="section-label">
+            Nos prestations
+          </div>
+
+          <h2 class="section-title">
+            L'essentiel pour<br>
+            votre automobile.
+          </h2>
+
+          <p class="section-intro">
+            Des prestations d'entretien et de réparation pour maintenir
+            votre véhicule en bon état et vous permettre de rouler
+            sereinement.
+          </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+          <article class="service-card">
+
+            <div class="service-number">
+              01
+            </div>
+
+            <h3>
+              Révision
+            </h3>
+
+            <p>
+              Entretien périodique et contrôle des principaux éléments
+              de votre véhicule.
+            </p>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <div class="service-number">
+              02
+            </div>
+
+            <h3>
+              Freinage
+            </h3>
+
+            <p>
+              Contrôle et remplacement des plaquettes, disques
+              et éléments du système de freinage.
+            </p>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <div class="service-number">
+              03
+            </div>
+
+            <h3>
+              Diagnostic
+            </h3>
+
+            <p>
+              Lecture des défauts électroniques et recherche
+              de l'origine des problèmes.
+            </p>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <div class="service-number">
+              04
+            </div>
+
+            <h3>
+              Pneus
+            </h3>
+
+            <p>
+              Montage, équilibrage et contrôle de l'état
+              de vos pneumatiques.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         HOURS
+    ====================================================== -->
+
+    <section class="hours-section" id="horaires">
+
+      <div class="container">
+
+        <div class="hours-box">
+
+          <div>
+
+            <h2>
+              Horaires d'ouverture
+            </h2>
+
+            <p>
+              <strong>
+                Du lundi au samedi :
+              </strong>
+              9h00 – 19h00
+            </p>
+
+            <p>
+              Sur rendez-vous selon disponibilité.
+            </p>
+
+          </div>
+
+          <div class="hours-status">
+
+            <span class="status-dot"></span>
+
+            <strong>
+              Service automobile
+            </strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTACT
+    ====================================================== -->
+
+    <section class="contact-section" id="contact">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div class="section-label">
+            Contact
+          </div>
+
+          <h2 class="section-title">
+            Besoin d'un garage ?
+          </h2>
+
+          <p class="section-intro">
+            Contactez-nous pour discuter de votre véhicule,
+            préparer votre rendez-vous ou obtenir davantage
+            d'informations.
+          </p>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+          <div class="contact-box">
+
+            <div class="contact-item">
+
+              <small>
+                Localisation
+              </small>
+
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=Toulouse"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                📍 Toulouse, France
+              </a>
+
+            </div>
+
+
+            <div class="contact-item">
+
+              <small>
+                Téléphone
+              </small>
+
+              <a href="tel:+33000000000">
+                📞 06 00 00 00 00
+              </a>
+
+            </div>
+
+
+            <div class="contact-item">
+
+              <small>
+                Email
+              </small>
+
+              <a href="mailto:contact@example.fr">
+                ✉️ contact@example.fr
+              </a>
+
+            </div>
+
+
+            <div class="contact-item">
+
+              <small>
+                Disponibilité
+              </small>
+
+              <strong>
+                Du lundi au samedi<br>
+                9h00 – 19h00
+              </strong>
+
+            </div>
+
+          </div>
+
+
+          <iframe
+            class="map"
+            src="https://www.google.com/maps?q=Toulouse&output=embed"
+            loading="lazy"
+            title="Localisation du garage Auto Service Toulouse"
+            allowfullscreen
+          ></iframe>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CTA
+    ====================================================== -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="cta">
+
+          <div class="cta-content">
+
+            <h2>
+              Votre voiture mérite<br>
+              le bon entretien.
+            </h2>
+
+            <p>
+              Une révision, une panne ou simplement une question ?
+              Contactez Auto Service Toulouse pour échanger
+              sur votre besoin.
+            </p>
+
+          </div>
+
+
+          <a
+            class="btn"
+            href="tel:+33000000000"
+          >
+            📞 Nous appeler
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         RETURN
+    ====================================================== -->
+
+    <div class="return">
+
+      <a
+        class="btn"
+        href="../index.html"
+      >
+        ← Retour à l'accueil
+      </a>
+
+    </div>
+
+  </main>
+
+
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+
+  <footer>
+
+    <strong>
+      Auto Service Toulouse
+    </strong>
+
+    <span> • </span>
+
+    Garage automobile & mécanique
+
+    <br><br>
+
+    Toulouse • Entretien • Diagnostic • Réparation
+
+  </footer>
+
+
+  <!-- =======================================================
+       JAVASCRIPT
+  ======================================================== -->
+
+  <script>
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+
+      const isOpen = navLinks.classList.toggle("show");
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        isOpen ? "true" : "false"
+      );
+
+    });
+
+
+    navLinks.querySelectorAll("a").forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        navLinks.classList.remove("show");
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+      });
+
+    });
+
+  </script>
 
 </body>
 </html>
