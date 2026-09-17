@@ -3,78 +3,1033 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Cabinet Kiné & Ostéo - Toulouse</title>
-<meta name="description" content="Kinésithérapie & ostéopathie à Toulouse. Un accompagnement personnalisé pour votre mobilité, votre récupération et votre confort au quotidien.">
+
+<meta name="description"
+      content="Kinésithérapie & ostéopathie à Toulouse. Un accompagnement personnalisé pour votre mobilité, votre récupération et votre confort au quotidien.">
+
 <link rel="icon" href="logo/logo.png">
 <link rel="stylesheet" href="../common/style.css">
 
 <style>
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#fff;color:#222;line-height:1.7}
-a{color:inherit}
-.hero{position:relative;min-height:540px;display:flex;align-items:center;justify-content:center;padding:100px 20px 60px;background:linear-gradient(rgba(40,129,255,.55),rgba(39,56,244,.55)),url("images/photo2.jpeg") center/cover no-repeat;color:#fff;text-align:center;overflow:hidden}
-.hero-content{position:relative;z-index:2;width:100%;max-width:800px;padding:20px}
-.hero h1{margin:0;font-size:3.2rem;line-height:1.2}
-.hero p{max-width:700px;margin:20px auto 0;font-size:1.2rem}
-.top-nav{position:absolute;top:25px;left:50%;transform:translateX(-50%);z-index:20;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;width:calc(100% - 40px)}
-.top-nav a{padding:10px 18px;border-radius:30px;text-decoration:none;background:rgba(255,255,255,.12);backdrop-filter:blur(5px);font-weight:bold}
-.menu-toggle{display:none;position:absolute;top:20px;right:20px;z-index:30;width:52px;height:52px;border:0;border-radius:14px;background:rgba(255,255,255,.15);color:#fff;font-size:28px;cursor:pointer}
-.hero-buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:15px;margin-top:30px}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:14px 28px;border-radius:50px;text-decoration:none;font-weight:bold}
-.btn-primary{background:#ffcc00;color:#111}
-.btn-secondary{background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3)}
-.container{width:100%;max-width:1200px;margin:auto;padding:40px 20px}
-.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:-90px;position:relative;z-index:5}
-.info-card,.service-card,.contact-box{background:#fff;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.07)}
-.info-card{padding:28px;text-align:center}
-.info-icon{font-size:2rem}
-.info-card h3,.service-card h4{color:#005dbb}
-.section{background:#fff;margin-top:28px;padding:40px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.06)}
-.section-title{font-size:2rem;color:#0d2b52;margin:0 0 18px}
-.about{font-size:1.05rem;color:#444}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:25px}
-.service-card{padding:25px;background:#f8fbff;border:1px solid #e6eef8;box-shadow:none}
-.service-card h4{margin-top:0}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:25px}
-.contact-box{padding:25px;background:#f8fbff;box-shadow:none}
-.contact-box p{margin:0 0 14px}
-.contact-link{color:#005dbb;font-weight:bold;text-decoration:none}
-.contact-link:hover{text-decoration:underline}
-.map{width:100%;min-height:350px;border:0;border-radius:18px}
-.cta{margin-top:30px;padding:45px 30px;background:linear-gradient(135deg,rgba(40,129,255,.55),rgba(39,56,244,.55));color:#fff;text-align:center;border-radius:20px}
-.return{margin-top:35px;text-align:center}
-.return .btn{background:#edf3fb;color:#0d2b52}
-footer{margin-top:40px;background:#0d2b52;color:#fff;text-align:center;padding:25px}
-@media(max-width:850px){
-.hero{min-height:620px;padding:130px 20px 70px}
-.hero h1{font-size:2.3rem}
-.hero p{font-size:1.05rem}
-.hero-buttons{flex-direction:column;width:100%;max-width:320px;margin:30px auto 0}
-.hero-buttons .btn{width:100%}
-.menu-toggle{display:flex;align-items:center;justify-content:center}
-.top-nav{display:none;top:85px;right:20px;left:auto;width:auto;transform:none;flex-direction:column;align-items:stretch;background:rgba(0,0,0,.9);padding:15px;border-radius:18px}
-.top-nav.show{display:flex}
-.top-nav a{width:200px;text-align:center}
-.info-grid{margin-top:20px}
-.section{padding:25px 20px}
-.contact-grid{grid-template-columns:1fr}
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  box-sizing: border-box;
 }
-@media(max-width:480px){
-.hero{min-height:650px}
-.hero h1{font-size:2rem}
-.top-nav{right:15px}
-.top-nav a{width:180px}
-.container{padding:25px 15px}
-.section{padding:22px 16px}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: #f4f1eb;
+  color: #26332d;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+  --green: #526c5d;
+  --green-dark: #2f4037;
+  --green-light: #dfe7df;
+  --cream: #f4f1eb;
+  --white: #ffffff;
+  --sand: #e7dfd2;
+  --text: #26332d;
+  --muted: #68736d;
+  --accent: #c8a77a;
+}
+
+
+/* =========================================================
+   HEADER / HERO
+========================================================= */
+
+.hero {
+  position: relative;
+  min-height: 720px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 100px 7vw 90px;
+
+  color: #fff;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(38, 52, 45, .88) 0%,
+      rgba(38, 52, 45, .70) 45%,
+      rgba(38, 52, 45, .20) 100%
+    ),
+    url("images/photo2.jpeg") center / cover no-repeat;
+
+  overflow: hidden;
+}
+
+
+/* decorative circle */
+
+.hero::after {
+  content: "";
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  right: -150px;
+  bottom: -170px;
+
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 50%;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.top-nav {
+  position: absolute;
+
+  top: 25px;
+  left: 7vw;
+  right: 7vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 8px;
+
+  z-index: 20;
+}
+
+.top-nav a {
+  padding: 10px 17px;
+
+  color: #fff;
+  text-decoration: none;
+
+  font-size: .9rem;
+  font-weight: 600;
+
+  border-radius: 30px;
+
+  transition:
+    background .25s ease,
+    transform .25s ease;
+}
+
+.top-nav a:hover {
+  background: rgba(255,255,255,.13);
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.menu-toggle {
+  display: none;
+
+  position: absolute;
+
+  top: 20px;
+  right: 20px;
+
+  width: 48px;
+  height: 48px;
+
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 50%;
+
+  background: rgba(30,45,38,.55);
+
+  color: #fff;
+
+  font-size: 22px;
+
+  cursor: pointer;
+
+  z-index: 30;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content {
+  position: relative;
+  z-index: 5;
+
+  width: 100%;
+  max-width: 760px;
+}
+
+.hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 25px;
+
+  font-size: .82rem;
+  font-weight: 700;
+
+  letter-spacing: .16em;
+  text-transform: uppercase;
+
+  color: #dce8df;
+}
+
+.hero-kicker::before {
+  content: "";
+
+  width: 35px;
+  height: 1px;
+
+  background: var(--accent);
+}
+
+.hero h1 {
+  margin: 0;
+
+  max-width: 700px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(3.2rem, 7vw, 6rem);
+  font-weight: 400;
+
+  line-height: 1.02;
+
+  letter-spacing: -.04em;
+}
+
+.hero h1 span {
+  color: #d8e4da;
+}
+
+.hero-description {
+  max-width: 620px;
+
+  margin: 30px 0 0;
+
+  font-size: 1.18rem;
+
+  color: rgba(255,255,255,.88);
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  margin-top: 38px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 52px;
+
+  padding: 13px 25px;
+
+  border-radius: 40px;
+
+  text-decoration: none;
+
+  font-size: .95rem;
+  font-weight: 700;
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    background .25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn-primary {
+  background: #fff;
+  color: var(--green-dark);
+
+  box-shadow: 0 12px 30px rgba(0,0,0,.15);
+}
+
+.btn-secondary {
+  color: #fff;
+
+  border: 1px solid rgba(255,255,255,.35);
+
+  background: rgba(255,255,255,.08);
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,.15);
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+
+  margin: auto;
+
+  padding: 0 25px 70px;
+}
+
+.intro-grid {
+  position: relative;
+  z-index: 10;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  margin-top: -70px;
+}
+
+.intro-card {
+  padding: 35px 30px;
+
+  background: #fff;
+
+  border-right: 1px solid #e7e3dc;
+}
+
+.intro-card:first-child {
+  border-radius: 18px 0 0 18px;
+}
+
+.intro-card:last-child {
+  border-right: none;
+  border-radius: 0 18px 18px 0;
+}
+
+.intro-number {
+  margin-bottom: 15px;
+
+  color: var(--accent);
+
+  font-size: .8rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.intro-card h3 {
+  margin: 0 0 8px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 1.45rem;
+  font-weight: 400;
+
+  color: var(--green-dark);
+}
+
+.intro-card p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: .95rem;
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.section {
+  margin-top: 75px;
+}
+
+.section-header {
+  max-width: 700px;
+
+  margin-bottom: 35px;
+}
+
+.eyebrow {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: var(--green);
+
+  font-size: .78rem;
+  font-weight: 800;
+
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-weight: 400;
+
+  line-height: 1.15;
+
+  color: var(--green-dark);
+}
+
+.section-intro {
+  margin-top: 18px;
+
+  color: var(--muted);
+
+  font-size: 1.05rem;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-layout {
+  display: grid;
+
+  grid-template-columns: .85fr 1.15fr;
+
+  gap: 70px;
+
+  align-items: center;
+}
+
+.about-visual {
+  min-height: 500px;
+
+  border-radius: 28px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(46,63,54,.05),
+      rgba(46,63,54,.20)
+    ),
+    url("images/photo2.jpeg") center / cover no-repeat;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.about-visual::after {
+  content: "";
+
+  position: absolute;
+
+  left: 25px;
+  bottom: 25px;
+
+  width: 130px;
+  height: 130px;
+
+  border: 1px solid rgba(255,255,255,.7);
+
+  border-radius: 50%;
+}
+
+.about-content p {
+  margin: 0 0 20px;
+
+  color: #59655f;
+
+  font-size: 1.05rem;
+}
+
+.quote {
+  margin-top: 35px;
+
+  padding: 25px 0 25px 25px;
+
+  border-left: 3px solid var(--accent);
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 1.45rem;
+
+  line-height: 1.45;
+
+  color: var(--green-dark);
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services-section {
+  padding: 65px 55px;
+
+  background: var(--green-dark);
+
+  border-radius: 28px;
+
+  color: #fff;
+}
+
+.services-section .section-title {
+  color: #fff;
+}
+
+.services-section .eyebrow {
+  color: #bfcfc3;
+}
+
+.services-section .section-intro {
+  color: rgba(255,255,255,.70);
+}
+
+.services-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 1px;
+
+  margin-top: 45px;
+
+  background: rgba(255,255,255,.14);
+}
+
+.service-card {
+  padding: 35px;
+
+  background: var(--green-dark);
+
+  transition: background .25s ease;
+}
+
+.service-card:hover {
+  background: #374c41;
+}
+
+.service-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  margin-bottom: 20px;
+
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 50%;
+
+  font-size: 1.2rem;
+}
+
+.service-card h3 {
+  margin: 0 0 10px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 1.45rem;
+  font-weight: 400;
+}
+
+.service-card p {
+  margin: 0;
+
+  color: rgba(255,255,255,.68);
+
+  font-size: .95rem;
+}
+
+
+/* =========================================================
+   HORAIRES
+========================================================= */
+
+.schedule {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 0;
+
+  overflow: hidden;
+
+  border-radius: 25px;
+
+  background: #e4e9e2;
+}
+
+.schedule-main {
+  padding: 50px;
+}
+
+.schedule-main h3 {
+  margin: 0 0 15px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 2rem;
+  font-weight: 400;
+
+  color: var(--green-dark);
+}
+
+.schedule-main p {
+  margin: 0;
+
+  color: var(--muted);
+}
+
+.schedule-hours {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 50px;
+
+  background: #fff;
+
+  text-align: center;
+}
+
+.schedule-hours strong {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 1.8rem;
+  font-weight: 400;
+
+  color: var(--green-dark);
+}
+
+.schedule-hours span {
+  color: var(--muted);
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-layout {
+  display: grid;
+
+  grid-template-columns: .8fr 1.2fr;
+
+  gap: 25px;
+}
+
+.contact-box {
+  padding: 45px;
+
+  background: #fff;
+
+  border-radius: 25px;
+}
+
+.contact-box h3 {
+  margin: 0 0 25px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 2rem;
+  font-weight: 400;
+
+  color: var(--green-dark);
+}
+
+.contact-item {
+  margin-bottom: 20px;
+}
+
+.contact-label {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: var(--muted);
+
+  font-size: .78rem;
+  font-weight: 700;
+
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.contact-link {
+  color: var(--green);
+
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+}
+
+.contact-note {
+  margin-top: 30px;
+  padding-top: 25px;
+
+  border-top: 1px solid #e4e0d9;
+
+  color: var(--muted);
+}
+
+.map {
+  width: 100%;
+  min-height: 420px;
+
+  border: 0;
+
+  border-radius: 25px;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta {
+  position: relative;
+
+  margin-top: 25px;
+
+  padding: 65px 35px;
+
+  background: var(--sand);
+
+  border-radius: 28px;
+
+  text-align: center;
+
+  overflow: hidden;
+}
+
+.cta::before {
+  content: "";
+
+  position: absolute;
+
+  width: 250px;
+  height: 250px;
+
+  left: -90px;
+  top: -120px;
+
+  border: 1px solid rgba(82,108,93,.2);
+
+  border-radius: 50%;
+}
+
+.cta h2 {
+  position: relative;
+
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(2rem, 4vw, 3.2rem);
+
+  font-weight: 400;
+
+  color: var(--green-dark);
+}
+
+.cta p {
+  position: relative;
+
+  max-width: 620px;
+
+  margin: 15px auto 25px;
+
+  color: var(--muted);
+}
+
+
+/* =========================================================
+   RETURN
+========================================================= */
+
+.return {
+  margin-top: 40px;
+
+  text-align: center;
+}
+
+.return .btn {
+  background: #fff;
+
+  color: var(--green-dark);
+
+  border: 1px solid #ddd7cd;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+  margin-top: 50px;
+
+  padding: 35px 20px;
+
+  background: var(--green-dark);
+
+  color: rgba(255,255,255,.7);
+
+  text-align: center;
+
+  font-size: .85rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .hero {
+    min-height: 650px;
+
+    padding: 130px 30px 80px;
+
+    background:
+      linear-gradient(
+        90deg,
+        rgba(38,52,45,.88),
+        rgba(38,52,45,.55)
+      ),
+      url("images/photo2.jpeg") center / cover no-repeat;
+  }
+
+  .top-nav {
+    display: none;
+
+    top: 78px;
+    left: auto;
+    right: 20px;
+
+    width: 220px;
+
+    padding: 12px;
+
+    flex-direction: column;
+    align-items: stretch;
+
+    background: rgba(38,52,45,.97);
+
+    border-radius: 18px;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,.25);
+  }
+
+  .top-nav.show {
+    display: flex;
+  }
+
+  .top-nav a {
+    width: 100%;
+
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .intro-grid {
+    grid-template-columns: 1fr;
+
+    margin-top: 25px;
+  }
+
+  .intro-card,
+  .intro-card:first-child,
+  .intro-card:last-child {
+    border-right: none;
+    border-bottom: 1px solid #e7e3dc;
+
+    border-radius: 0;
+  }
+
+  .intro-card:first-child {
+    border-radius: 18px 18px 0 0;
+  }
+
+  .intro-card:last-child {
+    border-bottom: none;
+    border-radius: 0 0 18px 18px;
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+  .about-visual {
+    min-height: 380px;
+  }
+
+  .services-section {
+    padding: 45px 25px;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media (max-width: 650px) {
+
+  .hero {
+    min-height: 680px;
+
+    padding: 120px 22px 70px;
+  }
+
+  .hero h1 {
+    font-size: 3.2rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+
+    max-width: 300px;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+  }
+
+  .container {
+    padding: 0 15px 50px;
+  }
+
+  .section {
+    margin-top: 55px;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .schedule {
+    grid-template-columns: 1fr;
+  }
+
+  .schedule-main,
+  .schedule-hours {
+    padding: 35px 25px;
+  }
+
+  .contact-box {
+    padding: 30px 25px;
+  }
+
+  .map {
+    min-height: 350px;
+  }
+
+  .cta {
+    padding: 50px 22px;
+  }
+}
+
+
+@media (max-width: 420px) {
+
+  .hero h1 {
+    font-size: 2.7rem;
+  }
+
+  .hero {
+    min-height: 650px;
+  }
+
+  .intro-card {
+    padding: 28px 23px;
+  }
 }
 </style>
 </head>
 
 <body>
 
+<!-- =====================================================
+     HERO
+===================================================== -->
+
 <section class="hero">
-  <button class="menu-toggle" id="menuToggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+
+  <button
+    class="menu-toggle"
+    id="menuToggle"
+    type="button"
+    aria-label="Ouvrir le menu"
+    aria-expanded="false">
+    ☰
+  </button>
 
   <nav class="top-nav" id="topNav">
     <a href="#apropos">À propos</a>
@@ -84,124 +1039,490 @@ footer{margin-top:40px;background:#0d2b52;color:#fff;text-align:center;padding:2
   </nav>
 
   <div class="hero-content">
-    <h1>Cabinet Kiné & Ostéo</h1>
-    <p>Un accompagnement personnalisé pour votre mobilité, votre récupération et votre confort au quotidien.</p>
+
+    <div class="hero-kicker">
+      Kinésithérapie & Ostéopathie
+    </div>
+
+    <h1>
+      Retrouver le mouvement,
+      <span>retrouver l’équilibre.</span>
+    </h1>
+
+    <p class="hero-description">
+      Un accompagnement personnalisé pour votre mobilité,
+      votre récupération et votre confort au quotidien.
+    </p>
 
     <div class="hero-buttons">
-      <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination=Toulouse" target="_blank" rel="noopener noreferrer">📍 Nous trouver</a>
-      <a class="btn btn-secondary" href="tel:+33000000000">📞 Nous appeler</a>
+
+      <a
+        class="btn btn-primary"
+        href="https://www.google.com/maps/dir/?api=1&destination=Toulouse"
+        target="_blank"
+        rel="noopener noreferrer">
+        📍 Nous trouver
+      </a>
+
+      <a
+        class="btn btn-secondary"
+        href="tel:+33000000000">
+        📞 Nous appeler
+      </a>
+
     </div>
+
   </div>
+
 </section>
+
 
 <main class="container">
 
-  <div class="info-grid">
-    
-      <article class="info-card">
-        <div class="info-icon">🏃</div>
-        <h3>Rééducation</h3>
-        <p>Accompagnement personnalisé selon vos objectifs et votre situation.</p>
-      </article>
 
-      <article class="info-card">
-        <div class="info-icon">🤲</div>
-        <h3>Ostéopathie</h3>
-        <p>Séances adaptées aux besoins de chaque patient.</p>
-      </article>
+  <!-- ===================================================
+       INTRO CARDS
+  ==================================================== -->
 
-      <article class="info-card">
-        <div class="info-icon">🧘</div>
-        <h3>Mobilité & prévention</h3>
-        <p>Conseils et exercices pour retrouver de bonnes habitudes.</p>
-      </article>
+  <div class="intro-grid">
+
+    <article class="intro-card">
+
+      <div class="intro-number">01 — MOUVEMENT</div>
+
+      <h3>Rééducation</h3>
+
+      <p>
+        Un accompagnement personnalisé selon vos objectifs
+        et votre situation.
+      </p>
+
+    </article>
+
+
+    <article class="intro-card">
+
+      <div class="intro-number">02 — ÉQUILIBRE</div>
+
+      <h3>Ostéopathie</h3>
+
+      <p>
+        Des séances adaptées aux besoins et au rythme
+        de chaque patient.
+      </p>
+
+    </article>
+
+
+    <article class="intro-card">
+
+      <div class="intro-number">03 — PRÉVENTION</div>
+
+      <h3>Mobilité & prévention</h3>
+
+      <p>
+        Des conseils et exercices pour retrouver
+        de bonnes habitudes au quotidien.
+      </p>
+
+    </article>
+
   </div>
 
+
+  <!-- ===================================================
+       ABOUT
+  ==================================================== -->
+
   <section class="section" id="apropos">
-    <h2 class="section-title">À propos de nous</h2>
-    <div class="about">
-      <p>Notre cabinet propose un accompagnement personnalisé en kinésithérapie et ostéopathie. Chaque séance commence par une écoute attentive et une évaluation adaptée.</p>
-      <p>Contactez-nous pour discuter de votre besoin et obtenir une information adaptée à votre projet.</p>
-    </div>
-  </section>
 
-  <section class="section" id="services">
-    <h2 class="section-title">Nos services</h2>
-    <div class="services-grid">
-      
-        <article class="service-card">
-          <h4>Kinésithérapie</h4>
-          <p>Rééducation et accompagnement fonctionnel personnalisé.</p>
-        </article>
+    <div class="about-layout">
 
-        <article class="service-card">
-          <h4>Ostéopathie</h4>
-          <p>Séances individualisées selon vos besoins.</p>
-        </article>
+      <div class="about-visual"></div>
 
-        <article class="service-card">
-          <h4>Mobilité</h4>
-          <p>Travail progressif de la mobilité et du mouvement.</p>
-        </article>
+      <div class="about-content">
 
-        <article class="service-card">
-          <h4>Prévention</h4>
-          <p>Conseils et exercices pour accompagner votre quotidien.</p>
-        </article>
-    </div>
-  </section>
+        <div class="section-header">
 
-  <section class="section" id="horaires">
-    <h2 class="section-title">Horaires</h2>
-    <p>🕘 Ouvert du lundi au samedi : 9h00 – 19h00</p>
-    <p>📅 Sur rendez-vous selon disponibilité.</p>
-  </section>
+          <span class="eyebrow">
+            Notre approche
+          </span>
 
-  <section class="section" id="contact">
-    <h2 class="section-title">Contact & localisation</h2>
+          <h2 class="section-title">
+            Une prise en charge
+            attentive et personnalisée.
+          </h2>
 
-    <div class="contact-grid">
-      <div class="contact-box">
-        <p>📍 <a class="contact-link" href="https://www.google.com/maps/dir/?api=1&destination=Toulouse" target="_blank" rel="noopener noreferrer">Toulouse, France</a></p>
-        <p>📞 <a class="contact-link" href="tel:+33000000000">06 00 00 00 00</a></p>
-        <p>✉️ <a class="contact-link" href="mailto:contact@example.fr">contact@example.fr</a></p>
-        <p>Nous sommes à votre écoute pour répondre à vos questions et préparer votre rendez-vous.</p>
+        </div>
+
+        <p>
+          Notre cabinet propose un accompagnement personnalisé
+          en kinésithérapie et ostéopathie.
+        </p>
+
+        <p>
+          Chaque séance commence par une écoute attentive
+          et une évaluation adaptée afin de mieux comprendre
+          vos besoins et vos objectifs.
+        </p>
+
+        <p>
+          L'objectif est de vous accompagner progressivement
+          dans votre mobilité, votre récupération et votre
+          confort au quotidien.
+        </p>
+
+        <div class="quote">
+          « Chaque patient est différent.
+          Notre accompagnement s’adapte à vous. »
+        </div>
+
       </div>
 
-      <iframe class="map" src="https://www.google.com/maps?q=Toulouse&output=embed" loading="lazy" title="Localisation à Toulouse"></iframe>
     </div>
+
+  </section>
+
+
+  <!-- ===================================================
+       SERVICES
+  ==================================================== -->
+
+  <section class="section" id="services">
+
+    <div class="services-section">
+
+      <div class="section-header">
+
+        <span class="eyebrow">
+          Ce que nous proposons
+        </span>
+
+        <h2 class="section-title">
+          Nos services
+        </h2>
+
+        <p class="section-intro">
+          Des soins et un accompagnement pensés autour
+          de vos besoins et de votre évolution.
+        </p>
+
+      </div>
+
+
+      <div class="services-grid">
+
+        <article class="service-card">
+
+          <div class="service-icon">↗</div>
+
+          <h3>Kinésithérapie</h3>
+
+          <p>
+            Rééducation et accompagnement fonctionnel
+            personnalisé.
+          </p>
+
+        </article>
+
+
+        <article class="service-card">
+
+          <div class="service-icon">◌</div>
+
+          <h3>Ostéopathie</h3>
+
+          <p>
+            Séances individualisées selon vos besoins
+            et votre situation.
+          </p>
+
+        </article>
+
+
+        <article class="service-card">
+
+          <div class="service-icon">⌁</div>
+
+          <h3>Mobilité</h3>
+
+          <p>
+            Travail progressif de la mobilité et
+            du mouvement.
+          </p>
+
+        </article>
+
+
+        <article class="service-card">
+
+          <div class="service-icon">+</div>
+
+          <h3>Prévention</h3>
+
+          <p>
+            Conseils et exercices pour accompagner
+            votre quotidien.
+          </p>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===================================================
+       HORAIRES
+  ==================================================== -->
+
+  <section class="section" id="horaires">
+
+    <div class="section-header">
+
+      <span class="eyebrow">
+        Disponibilités
+      </span>
+
+      <h2 class="section-title">
+        Prenez le temps de prendre soin de vous.
+      </h2>
+
+    </div>
+
+
+    <div class="schedule">
+
+      <div class="schedule-main">
+
+        <h3>Horaires du cabinet</h3>
+
+        <p>
+          Nous vous accueillons sur rendez-vous
+          selon les disponibilités.
+        </p>
+
+      </div>
+
+
+      <div class="schedule-hours">
+
+        <div>
+
+          <strong>
+            Lundi — Samedi
+          </strong>
+
+          <span>
+            9h00 – 19h00
+          </span>
+
+          <br><br>
+
+          <span>
+            📅 Sur rendez-vous
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===================================================
+       CONTACT
+  ==================================================== -->
+
+  <section class="section" id="contact">
+
+    <div class="section-header">
+
+      <span class="eyebrow">
+        Nous contacter
+      </span>
+
+      <h2 class="section-title">
+        Parlons de vos besoins.
+      </h2>
+
+      <p class="section-intro">
+        Une question, une demande d'information ou
+        un rendez-vous ? Nous sommes à votre écoute.
+      </p>
+
+    </div>
+
+
+    <div class="contact-layout">
+
+
+      <div class="contact-box">
+
+        <h3>
+          Cabinet Kiné & Ostéo
+        </h3>
+
+
+        <div class="contact-item">
+
+          <span class="contact-label">
+            Adresse
+          </span>
+
+          <a
+            class="contact-link"
+            href="https://www.google.com/maps/dir/?api=1&destination=Toulouse"
+            target="_blank"
+            rel="noopener noreferrer">
+            📍 Toulouse, France
+          </a>
+
+        </div>
+
+
+        <div class="contact-item">
+
+          <span class="contact-label">
+            Téléphone
+          </span>
+
+          <a
+            class="contact-link"
+            href="tel:+33000000000">
+            📞 06 00 00 00 00
+          </a>
+
+        </div>
+
+
+        <div class="contact-item">
+
+          <span class="contact-label">
+            Email
+          </span>
+
+          <a
+            class="contact-link"
+            href="mailto:contact@example.fr">
+            ✉️ contact@example.fr
+          </a>
+
+        </div>
+
+
+        <div class="contact-note">
+
+          Nous sommes à votre écoute pour répondre
+          à vos questions et préparer votre rendez-vous.
+
+        </div>
+
+      </div>
+
+
+      <iframe
+        class="map"
+        src="https://www.google.com/maps?q=Toulouse&output=embed"
+        loading="lazy"
+        title="Localisation du cabinet à Toulouse">
+      </iframe>
+
+    </div>
+
+
+    <!-- CTA -->
 
     <div class="cta">
-      <h2>Prenez soin de votre mobilité.</h2>
-      <p>Contactez-nous pour échanger sur votre besoin et trouver la formule qui vous convient.</p>
+
+      <h2>
+        Votre mobilité commence ici.
+      </h2>
+
+      <p>
+        Contactez-nous pour échanger sur votre besoin
+        et trouver un accompagnement adapté.
+      </p>
+
+      <a
+        class="btn btn-primary"
+        href="tel:+33000000000">
+        📞 Prendre contact
+      </a>
+
     </div>
 
+
+    <!-- RETURN -->
+
     <div class="return">
-      <a class="btn" href="../index.html">⬅ Retour à l’accueil</a>
+
+      <a
+        class="btn"
+        href="../index.html">
+        ← Retour à l’accueil
+      </a>
+
     </div>
+
   </section>
 
 </main>
 
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <footer>
-  <p>© 2026 Cabinet Kiné & Ostéo • Toulouse</p>
+
+  <p>
+    © 2026 Cabinet Kiné & Ostéo • Toulouse
+  </p>
+
 </footer>
 
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
 <script>
+
 const menuToggle = document.getElementById("menuToggle");
 const topNav = document.getElementById("topNav");
 
 menuToggle.addEventListener("click", () => {
+
   const isOpen = topNav.classList.toggle("show");
-  menuToggle.setAttribute("aria-expanded", isOpen);
+
+  menuToggle.setAttribute(
+    "aria-expanded",
+    isOpen ? "true" : "false"
+  );
+
 });
 
+
 topNav.querySelectorAll("a").forEach(link => {
+
   link.addEventListener("click", () => {
+
     topNav.classList.remove("show");
-    menuToggle.setAttribute("aria-expanded", "false");
+
+    menuToggle.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
   });
+
 });
+
 </script>
 
 </body>
