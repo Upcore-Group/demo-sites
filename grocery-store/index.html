@@ -575,35 +575,45 @@
           rgba(0,0,0,0.05)
         );
     }
+.product-card:nth-child(1) {
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.10)
+    ),
+    url("images/selection.jpeg") center / cover no-repeat;
+}
 
-    .product-card:nth-child(1) {
-      background:
-        url("images/photo1.png") center / cover;
-    }
+.product-card:nth-child(2) {
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.10)
+    ),
+    url("images/books.jpeg") center / cover no-repeat;
+}
 
-    .product-card:nth-child(2) {
-      background:
-        linear-gradient(rgba(100,30,40,0.25),rgba(0,0,0,0.2)),
-        url("images/photo1.png") center / cover;
-    }
+.product-card:nth-child(3) {
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.10)
+    ),
+    url("images/special.jpeg") center / cover no-repeat;
+}
 
-    .product-card:nth-child(3) {
-      background:
-        linear-gradient(rgba(50,70,35,0.25),rgba(0,0,0,0.2)),
-        url("images/photo1.png") center / cover;
-    }
-
-    .product-card:nth-child(4) {
-      background:
-        linear-gradient(rgba(80,55,20,0.25),rgba(0,0,0,0.2)),
-        url("images/photo1.png") center / cover;
-    }
-
-     .freezed {
-      background:
-        linear-gradient(rgba(80,55,20,0.25),rgba(0,0,0,0.2)),
-        url("images/freezed.jpeg") center / cover;
-    }
+.product-card:nth-child(4) {
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.10)
+    ),
+    url("images/freezed.jpeg") center / cover no-repeat;
+}
 
     .product-card:hover {
       transform: translateY(-7px);
@@ -1449,7 +1459,7 @@
 
         <article class="product-card">
 
-          <div class="product-card-content">
+          <div class="product-card-content" back>
 
             <span class="product-number">
               01
@@ -1460,8 +1470,8 @@
             </h3>
 
             <p>
-              Produits laitiers, viandes,
-              charcuteries et spécialités.
+              Produits laitiers, charcuteries 
+              et spécialités.
             </p>
 
           </div>
@@ -1521,7 +1531,7 @@
               04
             </span>
 
-            <h3 class="freezed">
+            <h3>
               Surgelés
             </h3>
 
